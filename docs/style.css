@@ -1,0 +1,724 @@
+/* --- 1. 全域變數與基本設定 --- */
+:root {
+    /* 深色模式配色盤 */
+    --bg-body: #121212;
+    --bg-paper: #1e1e1e;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --accent-color: #bb86fc;
+    /* 紫色 */
+    --code-bg: #2d2d2d;
+    --border-color: #333333;
+    --hover-bg: #2c2c2c;
+    --toc-active-bg: rgba(187, 134, 252, 0.15);
+
+    --font-serif: 'Noto Serif TC', serif;
+    --font-ui: 'Roboto Mono', system-ui, sans-serif;
+    --line-height: 1.8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    line-height: var(--line-height);
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Banner & Progress Bar --- */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 1000;
+}
+
+#progress-bar {
+    height: 100%;
+    background: var(--accent-color);
+    width: 0%;
+}
+
+.chapter-banner {
+    position: relative;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.chapter-banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(18, 18, 18, 0.1) 0%, rgba(18, 18, 18, 1) 100%);
+    z-index: 2;
+}
+
+.banner-title {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.chapter-number {
+    display: block;
+    font-family: var(--font-ui);
+    color: var(--accent-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.banner-title h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+/* --- Layout (Inner Page Grid) --- */
+.layout-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 100px;
+}
+
+.book-container {
+    width: 100%;
+}
+
+/* --- Sidebar (TOC) --- */
+.toc-sidebar {
+    display: block;
+}
+
+.toc-sticky-container {
+    position: sticky;
+    top: 40px;
+    padding-left: 20px;
+    border-left: 1px solid var(--border-color);
+}
+
+.toc-header {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.toc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.toc-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+    position: relative;
+}
+
+.toc-link:hover {
+    color: var(--text-primary);
+    background-color: var(--hover-bg);
+}
+
+.toc-link.active {
+    color: var(--accent-color);
+    background-color: var(--toc-active-bg);
+    font-weight: bold;
+}
+
+.toc-link.active::before {
+    content: '';
+    position: absolute;
+    left: -21px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Back to Catalog Link */
+.back-to-catalog-link {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: color 0.2s;
+    font-weight: 600;
+}
+
+.back-to-catalog-link .arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+    margin-right: 4px;
+}
+
+.back-to-catalog-link:hover {
+    color: var(--accent-color);
+}
+
+.back-to-catalog-link:hover .arrow {
+    transform: translateX(-3px);
+}
+
+.toc-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+/* Floating Home Button (Mobile) */
+.floating-home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(30, 30, 30, 0.8);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    z-index: 1001;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.floating-home-btn:hover {
+    background-color: var(--accent-color);
+    color: #000;
+    transform: scale(1.1);
+    border-color: var(--accent-color);
+}
+
+/* --- Typography & Content --- */
+h3 {
+    font-size: 1.6rem;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+    color: #fff;
+    scroll-margin-top: 2em;
+}
+
+p {
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+.first-paragraph::first-letter {
+    float: left;
+    font-size: 3.5em;
+    line-height: 0.8;
+    padding-right: 0.1em;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Code Block */
+.code-block {
+    background: var(--code-bg);
+    padding: 20px;
+    border-radius: 6px;
+    margin: 2em 0;
+    overflow-x: auto;
+    border-left: 3px solid var(--accent-color);
+}
+
+pre {
+    margin: 0;
+}
+
+code {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: #d4d4d4;
+}
+
+/* Note Box */
+.note-box {
+    background: rgba(187, 134, 252, 0.08);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5em;
+    margin: 2em 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.note-box strong {
+    color: var(--accent-color);
+    display: block;
+    margin-bottom: 0.5em;
+    font-family: var(--font-ui);
+}
+
+.note-box p {
+    margin-bottom: 0;
+}
+
+/* Other Elements */
+.epigraph {
+    margin: 0 auto 3em;
+    width: 90%;
+    text-align: center;
+    font-style: italic;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1em;
+}
+
+ul,
+ol {
+    margin: 1.5em 0;
+    padding-left: 2em;
+    /* 確保有足夠空間顯示符號 */
+    color: var(--text-primary);
+}
+
+/* 確保項目之間有呼吸空間 */
+li {
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    /* 文字與符號稍微拉開距離 */
+}
+
+/* 特別美化數字列表的序號顏色 (選用) */
+ol li::marker {
+    color: var(--accent-color);
+    /* 讓數字變成紫色 */
+    font-family: var(--font-ui);
+    font-weight: bold;
+}
+
+/* 特別美化項目符號的顏色 (選用) */
+ul li::marker {
+    color: var(--accent-color);
+    /* 讓圓點變成紫色 */
+}
+
+figure {
+    margin: 3em 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+figcaption {
+    margin-top: 1em;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: var(--font-ui);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    margin: 2em 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+}
+
+th {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Navigation */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 60px 0;
+}
+
+.chapter-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    background: var(--bg-paper);
+    transition: 0.3s ease;
+    display: block;
+}
+
+.nav-btn:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    background: var(--hover-bg);
+}
+
+.nav-btn .label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    font-family: var(--font-ui);
+}
+
+.nav-btn .title {
+    display: block;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.nav-btn.next-chapter {
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 30px 20px;
+    }
+
+    .toc-sidebar {
+        display: none;
+    }
+
+    .chapter-banner h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 901px) {
+    .floating-home-btn {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   以下為 Catalog (目錄頁) 專用樣式
+   ========================================= */
+
+/* --- Catalog Hero --- */
+.catalog-hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(circle at center, #2a2a2a 0%, var(--bg-body) 70%);
+}
+
+.hero-bg-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.1;
+    filter: blur(80px);
+    z-index: 1;
+    animation: pulse 4s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-subtitle {
+    display: block;
+    font-family: var(--font-ui);
+    color: var(--accent-color);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(187, 134, 252, 0.3);
+}
+
+.hero-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.start-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--accent-color);
+    color: #000;
+    font-family: var(--font-ui);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(187, 134, 252, 0.3);
+    background: #fff;
+}
+
+/* --- Catalog Layout Fix (目錄頁佈局修正) --- */
+.catalog-container {
+    max-width: 800px;
+    /* 限制最大寬度 */
+    margin: 0 auto;
+    /* 水平置中 */
+    padding: 60px 24px;
+    /* 內距，防止貼邊 */
+    width: 100%;
+}
+
+.foreword-section h2 {
+    color: #fff;
+    margin-bottom: 0.8em;
+    text-align: center;
+}
+
+.foreword-section p {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.foreword-section .note-box {
+    text-align: left;
+    margin-bottom: 4em;
+}
+
+/* --- Catalog Grid --- */
+.phase-group {
+    margin-bottom: 60px;
+}
+
+.phase-title {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.chapter-card {
+    display: flex;
+    align-items: center;
+    background: var(--bg-paper);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.chapter-card:hover {
+    border-color: var(--accent-color);
+    background: var(--hover-bg);
+    transform: translateX(5px);
+}
+
+.card-status {
+    font-family: var(--font-ui);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 20px;
+    min-width: 40px;
+}
+
+.card-info {
+    flex: 1;
+}
+
+.card-info h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    font-family: var(--font-ui);
+}
+
+.card-desc {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.card-icon {
+    font-family: var(--font-ui);
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+/* Active & Locked States */
+.chapter-card.active {
+    border-color: var(--accent-color);
+    background: rgba(187, 134, 252, 0.05);
+}
+
+.chapter-card.active .card-status {
+    color: var(--accent-color);
+}
+
+.chapter-card.active h4 {
+    color: #fff;
+}
+
+.chapter-card.active .card-icon {
+    color: var(--accent-color);
+}
+
+.chapter-card.locked {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #181818;
+}
+
+.chapter-card.locked:hover {
+    transform: none;
+    border-color: var(--border-color);
+}
+
+.badge-current {
+    display: inline-block;
+    font-size: 0.7rem;
+    background: var(--accent-color);
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-ui);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.catalog-footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #555;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .catalog-hero {
+        height: 60vh;
+    }
+
+    .chapter-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-status {
+        margin-bottom: 10px;
+    }
+
+    .card-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}

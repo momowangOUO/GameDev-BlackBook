@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲研發與發行全書 - 第一章：研究邏輯的三層推導模型</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="catalog.html" class="floating-home-btn" title="回到目錄">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="chapter-banner">
+        <div class="banner-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
+            alt="Game Design Banner">
+        <div class="banner-title">
+            <span class="chapter-number">section 01</span>
+            <h1>研究邏輯的三層推導模型</h1>
+            <h2>The Three-Layer Deduction: From Demographics to Mechanics</h2>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+
+        <main class="book-container">
+            <article class="chapter-content">
+
+                <div class="epigraph">
+                    <blockquote>
+                        「在我們討論『怎麼做』之前，必須先就『為什麼做』達成殘酷的共識。」
+                    </blockquote>
+                </div>
+                <section class="book-section">
+                    <h3 id="section-0">導論：重構研發的認知基石<br>Introduction to Vol 1: <br>Reconstructing the Cognitive
+                        Cornerstone
+                    </h3>
+                    <p class="first-paragraph">
+                        如果將這套全書比作一台精密的遊戲研發機器，那麼 第一部 (Volume 1) 就是它的 操作系統 (OS)。
+                    </p>
+                    <p>
+                        在後續的卷冊中，我們將深入探討開放世界的地圖設計、二次元的抽卡概率等具體問題。但在觸碰那些「應用層」之前，我們必須先檢查「底層代碼」是否乾淨。很多項目的崩塌，根本原因在於研發團隊缺乏一套統一的
+                        決策邏輯——美術追求「好看」，策劃追求「平衡」，製作人追求「數據」，視角的錯位導致了資源的巨大浪費。
+                    </p>
+                    <p>
+                        第一部旨在解決遊戲研發中最本質的兩個維度，建立全團隊的通用語言：
+                    </p>
+                    <ol>
+                        <li><strong>空間維度（橫向）：</strong>如何從冷冰冰的數據中，推導出鮮活的玩法？（第一章：研究邏輯的三層推導模型）</li>
+                        <li><strong>時間維度（縱向）：</strong>如何設計玩家在全生命週期中的「上癮路徑」？（第二章：用戶生命週期管理模型）</li>
+                    </ol>
+                    <p>
+                        這一部不談特定玩法，只談 「如何思考」。它要求我們將視角從「設計師的自我表達」強行扭轉為「對用戶需求的精準回應」。這是通往工業化研發的唯一門票。
+                    </p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-1">一、 拒絕「拍腦袋」：為什麼我們需要逆向推導？</h3>
+                    <div class="epigraph">
+                        <blockquote>
+                            「「如果你不知道你的玩家是誰，你就是在為空氣設計。如果你不知道他們為什麼而玩，你就是在浪費代碼。不要試圖討好所有人，那是平庸的開始。」
+                            <cite>—— 佚名資深製作人</cite>
+                        </blockquote>
+                    </div>
+                    <p>
+                        在遊戲研發的會議室裡，最昂貴的賭博往往以「我覺得」開頭。當市場進入存量博弈，成功的概率不再取決於靈感爆發，而取決於對目標用戶的精準狙擊。
+                    </p>
+                    <p>
+                        本章將構建一套 「用戶導向型逆向推導模型」（User-Centric Reverse
+                        Deduction）。這是一套嚴謹的邏輯閉環，要求研發團隊在寫下第一行代碼前，必須完成從「人口統計（Who）」到「心理訴求（Why）」再到「機制實現（How）」的完整推演。
+                    </p>
+                    <p>
+                        這不是限制創意，而是為創意裝上導航系統。
+                    </p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-2">二、 第一層：人口統計與畫像定錨 (Who: Demographics)</h3>
+                    <p>
+                        傳統的「18-25歲男性」標籤已失效。我們需引入社會學視角，從 世代認知 與 生活型態 進行深挖。
+                    </p>
+                    <ol>
+                        <li>世代隊列理論 (Generational Cohort Theory)<ul>
+                                <li><strong>千禧世代 (Gen Y / Millennials, 1981-1996)：</strong>付費主力與數值信徒<ul>
+                                        <li>特徵：經歷單機到網遊變遷，擁有強烈的 「懷舊情結」 與 「數值崇拜」。相信「努力/付費就有回報」。</li>
+                                        <li>啟示：接受「花錢買時間」。IP 還原度與排行榜榮耀感是核心驅動力。討厭過於複雜的隨機性。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Z 世代 (Gen Z, 1997-2012)：</strong>身分認同與梗文化<ul>
+                                        <li>特徵：數位原住民，虛擬世界即現實。重視 「身分認同」 與 「自我表達」。</li>
+                                        <li>啟示：虛擬形象（Avatar）比數值更重要。討厭權威與強制引導，喜歡非線性探索與「去中心化」社區。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Alpha 世代 (Gen Alpha, 2013後)：</strong>觸控螢幕土著與創作者<ul>
+                                        <li>特徵：注意力極短，習慣 UGC 共創。認為「我能修改遊戲」是天經地義的權利。</li>
+                                        <li>啟示：反饋必須是毫秒級的。UI 必須是直覺圖形。必須提供「創作」空間。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>生活型態變量：時間與設備<ul>
+                                <li><strong>碎片化時間 (Fragmented, &lt;10 min)：</strong>
+                                    <ul>
+                                        <li>場景：通勤、排隊。</li>
+                                        <li>鐵律：豎屏優先（單手操作），隨時暫停（狀態保存），短循環（&lt;5分鐘）。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>沉浸式時間 (Immersive, &gt;1 小時)：</strong>
+                                    <ul>
+                                        <li>場景：週末午後、睡前。</li>
+                                        <li>鐵律：心流構建（長線敘事），視聽盛宴（細節放大）。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>設備持有率：</strong>
+                                    <ul>
+                                        <li>在下沉市場或新興市場，包體大小與低端機適配決定了 日活躍用戶數 (Daily Active Users) 天花板。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-3">三、 第二層：心理訴求與動機映射 (Why: Psychology)</h3>
+                    <p>
+                        遊戲是現實匱乏的補償。我們引入 大五人格 與 自我決定論 (SDT)。
+                    </p>
+                    <ol>
+                        <li>大五人格理論 (Big Five Traits)<div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>人格特質</th>
+                                            <th>遊戲偏好</th>
+                                            <th>設計重點 (Dos & Don'ts)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>開放性</td>
+                                            <td>探索 / 沙盒</td>
+                                            <td>Dos: 巨大地圖、隱藏彩蛋。<br>Don'ts: 重複跑環任務。</td>
+                                        </tr>
+                                        <tr>
+                                            <td>盡責性</td>
+                                            <td>模擬 / 策略</td>
+                                            <td>Dos: 清晰任務表、成長曲線。<br>Don'ts: 模糊引導、無意義隨機。</td>
+                                        </tr>
+                                        <tr>
+                                            <td>外向性</td>
+                                            <td>MOBA / 大逃殺</td>
+                                            <td>Dos: 強社交、語音、皮膚炫耀。<br>Don'ts: 強制單機劇情。</td>
+                                        </tr>
+                                        <tr>
+                                            <td>宜人性</td>
+                                            <td>輔助 / 休閒</td>
+                                            <td>Dos: 補師角色、互助點讚。<br>Don'ts: 強制 PVP、惡意搶怪。</td>
+                                        </tr>
+                                        <tr>
+                                            <td>神經質</td>
+                                            <td>硬核 / 治癒</td>
+                                            <td>Dos: 極致壓力釋放 或 極致安全撫慰。</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li>自我決定論 (SDT) 的 ARC 模型<ul>
+                                <li><strong>自主性 (Autonomy)：</strong>玩家感覺是自己在做選擇<ul>
+                                        <li>反面：強制引導、單一最優解。</li>
+                                        <li>正面：多種通關手段、自定義 Build。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>勝任感 (Competence)：</strong>玩家感覺自己在變強<ul>
+                                        <li>反面：數值碾壓、反饋模糊。</li>
+                                        <li>正面：動態難度 (DDA)、清晰暴擊反饋。</li>
+                                    </ul>
+                                </li>
+                                <li><strong>關聯性 (Relatedness)：</strong>玩家感覺被需要<ul>
+                                        <li>反面：單機式網遊、機器人公會。</li>
+                                        <li>正面：師徒系統、準社會互動 NPC。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-4">四、 第三層：機制轉譯與 MDA 框架 (How: Translation)</h3>
+                    <p>設計師從 M (機制) 構建，玩家從 A (美學) 體驗。必須學會 「逆練 MDA」：從 A 逆推回 M。</p>
+                    <p>實戰：設計「末世生存的焦慮感」</p>
+                    <ul>
+                        <li><strong>A 美學 (Aesthetics)：</strong>生存焦慮、對未知的恐懼。</li>
+                        <li><strong>D 動態 (Dynamics)：</strong>資源匱乏心態、貪婪與安全的博弈、時間緊迫感。</li>
+                        <li><strong>M 機制 (Mechanics)：</strong>
+                            <ul>
+                                <li>背包格數限制（取捨）</li>
+                                <li>永久死亡（損失規避）</li>
+                                <li>夜晚視野受限（信息剝奪）</li>
+                                <li>飽食度倒計時（時間壓力）</li>
+                                <li>低血量心跳音效（生理喚起）</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-5">五、 關鍵案例分析 (Critical Case Analysis)</h3>
+                    <p>本節選取四個極端案例，展示如何針對不同人群（Who）與訴求（Why），精確推導出截然不同的機制（How）。</p>
+                    <ol>
+                        <li><strong>《AFK Arena (劍與遠征)》：對碎片化時間的極致掠奪</strong>
+                            <p>這不是一個單純的數值遊戲，這是一個針對現代上班族心理弱點的精準打擊產品。</p>
+                            <ul>
+                                <li>Who (人口定錨)：<ul>
+                                        <li>畫像：一線城市上班族，通勤時間長但擁擠（無法雙手操作），工作壓力大導致身心俱疲。</li>
+                                        <li>設備：單手持握手機，另一隻手拉吊環或拿咖啡。</li>
+                                    </ul>
+                                </li>
+                                <li>Why (心理訴求)：<ul>
+                                        <li>勝任感代償：現實中工作反饋週期太長（年度KPI），渴望即時的「變強」反饋。</li>
+                                        <li>JOMO (Joy of Missing Out)：因為太忙，對「錯過活動就落後」有極強焦慮。</li>
+                                    </ul>
+                                </li>
+                                <li>How (機制轉譯)：<ul>
+                                        <li>M1 豎屏 UI 佈局：所有關鍵按鈕集中在屏幕下半部拇指熱區，徹底適配地鐵場景。</li>
+                                        <li>M2 掛機收益 (Idle Rewards)：即使離線也在獲得資源。這是一個反直覺的設計——它獎勵「不玩」。這巧妙地消解了
+                                            FOMO（錯失恐懼），告訴玩家：「去忙工作吧，遊戲在幫你打工」。</li>
+                                        <li>M3 巴甫洛夫紅點：UI 設計充滿了可消除的紅點。點擊->消除->獲得小獎勵。這種微小的交互循環提供了高頻的、無腦的解壓感，類似於捏氣泡紙。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>《Elden Ring (艾爾登法環)》：對「自主性」的傲慢與尊重</strong>
+                            <p>為什麼一款沒有任務清單、沒有小地圖指引的遊戲能賣出 2000 萬份？因為它逆向操作了現代 3A 遊戲的「保姆式設計」。</p>
+                            <ul>
+                                <li>Who (人口定錨)：
+                                    <ul>
+                                        <li>畫像：被「育碧式開放世界」（滿地圖問號）餵吐了的資深玩家。大五人格中「開放性」極高。</li>
+                                        <li>特徵：厭惡被教導，渴望智力上的尊重。</li>
+                                    </ul>
+                                </li>
+                                <li>Why (心理訴求)：
+                                    <ul>
+                                        <li>極致自主性 (Radical Autonomy)：渴望「是我發現了這個秘密」，而不是「設計師指給我看這個秘密」。</li>
+                                        <li>不確定性的美學：未知帶來恐懼，也帶來征服後的巨大多巴胺。</li>
+                                    </ul>
+                                </li>
+                                <li>How (機制轉譯)：
+                                    <ul>
+                                        <li>M1 移除 UI 引導：沒有任務列表，沒有路徑導航。玩家必須依賴環境地標（黃金樹、高塔）來定位。這迫使玩家從「看小地圖走路」轉變為「看世界走路」。
+                                        </li>
+                                        <li>M2 敘事碎片化：劇情藏在物品說明裡。這是一個篩選機制，只有主動投入認知資源的玩家才能拼湊出真相，從而獲得巨大的智力成就感。</li>
+                                        <li>M3 難度作為敘事：Boss 的強大不是為了卡數值，而是為了讓玩家在幾十次死亡中，建立對該角色的敬畏（Ludonarrative Harmony）。
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>《Roblox》/《Minecraft》：Alpha 世代的樂高積木</strong>
+                            <p>如果你的目標用戶是 10 歲的孩子，千萬別給他們講故事，給他們鏟子。</p>
+                            <ul>
+                                <li>Who (人口定錨)：
+                                    <ul>
+                                        <li>畫像：Alpha 世代，觸屏原住民。</li>
+                                        <li>特徵：注意力極短，但創造力過剩。習慣於 YouTube Shorts 的節奏。</li>
+                                    </ul>
+                                </li>
+                                <li>Why (心理訴求)：
+                                    <ul>
+                                        <li>代理權 (Agency)：在現實中（學校、家庭）他們沒有權力，被處處管教。在遊戲中，他們渴望上帝般的權力（God Mode）。</li>
+                                        <li>社交貨幣：「看我做出了什麼」比「我打通了什麼」更具備社交傳播價值。</li>
+                                    </ul>
+                                </li>
+                                <li>How (機制轉譯)：
+                                    <ul>
+                                        <li>M1 編輯器即玩法：核心不是「玩」，而是「造」。提供低門檻的模組（Mod）工具。</li>
+                                        <li>M2 物理規則湧現：不設計腳本（Scripted Events），而是設計物理規則（TNT 會爆炸，水會流動）。讓樂趣從規則碰撞中「湧現」出來。
+                                        </li>
+                                        <li>M3 虛擬形象 (Avatar) 經濟：皮膚和動作不是為了數值，而是為了在虛擬操場（Lobby）裡社交。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>《Darkest Dungeon (暗黑地牢)》：壓力的具象化</strong>
+                            <ul>
+                                <li>Who：
+                                    <ul>
+                                        <li>尋求殘酷體驗的硬核玩家（高神經質、高盡責性）。</li>
+                                    </ul>
+                                </li>
+                                <li>Why：
+                                    <ul>
+                                        <li>想體驗身為「領導者」的代價——在爛選項和更爛選項中做決策。</li>
+                                    </ul>
+                                </li>
+                                <li>How：
+                                    <ul>
+                                        <li>M1 壓力值與怪癖：將「恐懼」量化為數值。壓力滿了角色會自私、抗命。這打破了「玩家控制一切」的傳統，帶來了真實的領導力焦慮。</li>
+                                        <li>M2 永久死亡：英雄死了就是死了，投資全部歸零。這讓每一次撤退都成為極度糾結的經濟決策。</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-6">六、 執行細節 Checklist (Execution Toolkit)</h3>
+                    <p>理論講完了，現在我們把它變成可以貼在辦公桌上的實戰工具。</p>
+                    <p><strong>工具一：用戶畫像深度審計表 (The Deep User Matrix)</strong></p>
+                    <p>在立項階段，請誠實回答以下問題，精確到小數點。</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>維度</th>
+                                <th>審計問題 (The Ask)</th>
+                                <th>設計啟示 (The Implications)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>環境噪音</td>
+                                <td>玩家通常在什麼分貝的環境下玩？</td>
+                                <td>如果是地鐵/公車（高噪音），字幕必須比語音更重要，且核心反饋不能僅依賴音效（如腳步聲）。</td>
+                            </tr>
+                            <tr>
+                                <td>打斷頻率</td>
+                                <td>每 10 分鐘會被打斷幾次（報站、老闆經過）？</td>
+                                <td>如果 >1 次，必須設計 「無損暫停」 或 「異步結算」 機制。</td>
+                            </tr>
+                            <tr>
+                                <td>社交壓力</td>
+                                <td>玩這款遊戲被別人看到會覺得尷尬嗎？</td>
+                                <td>針對二次元/乙女遊戲，必須設計 「防社死模式」（一鍵切換 UI 或簡化立繪）。</td>
+                            </tr>
+                            <tr>
+                                <td>網絡抖動</td>
+                                <td>目標市場（如東南亞）的平均 Ping 值是多少？</td>
+                                <td>如果 Ping > 100ms，判定邏輯必須在客戶端（Client-side prediction），而非伺服器端，否則手感會爛掉。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>工具二：心理-機制轉譯字典 (The Psycho-Mechanic Dictionary)</strong></p>
+                    <p>當你想表達某種情感時，請查閱此表尋找對應機制。</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>心理目標 (Goal)</th>
+                                <th>推薦機制 (Mechanics)</th>
+                                <th>禁忌機制 (Avoid)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>製造「焦慮」</td>
+                                <td>倒計時音效、資源背包限制、視野遮蔽、永久死亡風險</td>
+                                <td>無限背包、隨時存檔、全地圖開圖</td>
+                            </tr>
+                            <tr>
+                                <td>製造「孤獨」</td>
+                                <td>巨大的空曠場景、回聲音效、無法與 NPC 語言交流（只能肢體）、低飽和度色調</td>
+                                <td>喧鬧的 UI、頻繁的彈窗、公屏聊天頻道</td>
+                            </tr>
+                            <tr>
+                                <td>製造「貪婪」</td>
+                                <td>遞增的連勝獎勵（賭徒謬誤）、帶有極小概率大獎的隨機池（斯金納箱）</td>
+                                <td>固定收益、每日上限封頂</td>
+                            </tr>
+                            <tr>
+                                <td>製造「責任」</td>
+                                <td>NPC 會死亡且不可復活、你的選擇會永久改變地貌/城鎮</td>
+                                <td>劇情回溯、多周目繼承、無後果的對話選項</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><strong>工具三：MDA 屍檢預演 (Pre-Mortem MDA Test)</strong></p>
+                    <p>想像你的遊戲已經上線並失敗了，原因可能是什麼？</p>
+                    <p><strong>案例演練：戰鬥通行證 (Battle Pass) 設計</strong></p>
+                    <ul>
+                        <li><strong>預設 M (機制)：</strong>每天贏 3 場 PVP 可升級通行證。</li>
+                        <li><strong>預期 D (動態)：</strong>玩家每天活躍 30 分鐘，日活提升。</li>
+                        <li><strong>預期 A (美學)：</strong>每日達成目標的充實感。</li>
+                        <li><strong>實際屍檢 (Reality Check)：</strong>
+                            <ul>
+                                <li><strong>真實 D：</strong>玩家為了贏，只用「毒瘤」強勢牌組，休閒玩家被虐跑。輸了 2 場後心態崩潰，直接下線。</li>
+                                <li><strong>真實 A：</strong>挫敗感、上班感（Obligation）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>修正方案：</strong>將條件改為「進行 3 場 PVP（無論勝負）」或「造成 X 點傷害」。從 「結果導向」 轉為 「過程導向」，保護勝任感匱乏的玩家。</li>
+                    </ul>
+
+                    <p><strong>工具四：世代 UI 審計 (Generational UI Audit)</strong></p>
+                    <ul>
+                        <li><strong>Alpha 世代檢測：</strong>是否能在不閱讀任何文字的情況下，僅憑圖標完成核心循環？</li>
+                        <li><strong>Z 世代檢測：</strong>初始 Avatar 是否提供了至少 10 種個性化選項？是否有分享到 TikTok/社交媒體的一鍵高光按鈕？</li>
+                        <li><strong>千禧世代檢測：</strong>是否有清晰的「跳過」按鈕？VIP 等級權益是否明確標示（省時間權益）？</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-7">結語：從數據到靈魂</h3>
+                    <aside class="note-box">
+                        <strong>設計師筆記：</strong>
+                        <p>研究邏輯的三層推導，本質上是一個 「翻譯」
+                            的過程。我們將冷冰冰的人口數據，翻譯成鮮活的心理訴求，再翻譯成精密的遊戲機制。只有走通了這條路，我們才能驕傲地說：我們不是在堆砌功能，我們是在回應人性。</p>
+                    </aside>
+                </section>
+            </article>
+
+            <hr class="section-divider">
+
+            <nav class="chapter-nav">
+                <a href="s0.html" class="nav-btn prev-chapter">
+                    <span class="label">上一章</span>
+                    <span class="title">緣起</span>
+                </a>
+                <a href="#" class="nav-btn next-chapter">
+                    <span class="label">下一章</span>
+                    <span class="title">section 02</span>
+                </a>
+            </nav>
+
+        </main>
+
+        <footer class="catalog-footer">
+            本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
+            內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        </footer>
+
+        <aside class="toc-sidebar">
+            <div class="toc-sticky-container">
+                <a href="index.html" class="back-to-catalog-link">
+                    <span class="arrow">←</span> 回到目錄
+                </a>
+                <hr class="toc-divider">
+                <span class="toc-header">本章索引</span>
+                <nav class="toc-list">
+                    <a href="#section-0" class="toc-link">導論：重構研發的認知基石</a>
+                    <a href="#section-1" class="toc-link">拒絕「拍腦袋」</a>
+                    <a href="#section-2" class="toc-link">第一層：人口統計與畫像定錨</a>
+                    <a href="#section-3" class="toc-link">第二層：心理訴求與動機映射</a>
+                    <a href="#section-4" class="toc-link">第三層：機制轉譯與 MDA 框架</a>
+                    <a href="#section-5" class="toc-link">關鍵案例分析</a>
+                    <a href="#section-6" class="toc-link">執行細節 Checklist</a>
+                    <a href="#section-7" class="toc-link">結語：從數據到靈魂</a>
+                </nav>
+            </div>
+        </aside>
+
+        <footer class="catalog-footer">
+            本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
+            內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

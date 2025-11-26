@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲研發與發行全書 - 緣起</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="catalog.html" class="floating-home-btn" title="回到目錄">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="chapter-banner">
+        <div class="banner-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
+            alt="Game Design Banner">
+        <div class="banner-title">
+            <span class="chapter-number">section 01</span>
+            <h1>緣起</h1>
+            <h2>Prologue: Why This Book Exists</h2>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+
+        <main class="book-container">
+            <article class="chapter-content">
+
+                <!-- 章節一：緣起 -->
+                <section class="book-section">
+                    <h3 id="section-0">緣起</h3>
+                    <p>這本書的雛形，其實誕生於我身處某個商業遊戲巨頭的日子。</p>
+                    <p>那時候的我，還是一個標準的獨立遊戲原教旨主義者。我的 Steam 收藏庫裡塞滿了各種像素風神作，我看不起那些滿屏「儲值送
+                        VIP」的垃圾，堅信遊戲是第九藝術，是靈魂的共鳴。那時我懷抱著滿腔熱血，帶著一種「我要來整頓遊戲界」的強大氣場，成功潛入了這座商業遊戲的「死星」。</p>
+                    <p>我原本以為，做遊戲就是一群熱愛夢想的人聚在一起，碰撞創意的火花，做出感動世界的藝術品。結果進去不到一週，我發現自己錯得離譜。這裡不生產藝術，這裡生產的是「多巴胺注射器」。結果，我錯得比認為「帕秋莉會去健身房」還離譜。
+                    </p>
+                    <p>周圍的同事人很好，慈眉善目，從不強迫我。但我自己卻瘋了。面對那些龐大到像「阿卡夏記錄（根源）」一樣的商業研究報告，我的中二魂和學術魂同時爆發。我像個發現了隱藏路線的
+                        Speedrunner，沒日沒夜地扒著那些文檔看。</p>
+                    <p>在那段走火入魔的日子裡，我彷彿覺醒了「直死之魔眼」。我看不到老婆們的笑容，我只看到了一條條「死線」——也就是數值的破綻。這遊戲的抽卡機率沒有達到「黃金體驗鎮魂曲」的循環效果？切斷！那遊戲的每日任務沒有形成「無限月讀」般的沈浸感？刺穿！
+                    </p>
+                    <p>這本書，就是我那段時間在精神上把自己「數據化」的產物。它紀錄了我如何從一個只想和紙片人談戀愛的死肥宅，進化成一個能冷靜計算「如何讓玩家在看到老婆的瞬間，San
+                        值歸零並自動掏出魔法小卡」的幕後黑手。</p>
+                    <p>老實說吧，現在做遊戲，光靠「愛」這種東西，連幻想鄉的塞錢箱都填不滿！我們必須把人性扒光（物理上的就不必了，會被 FBI 抓），把玩家的慾望拆解成可被攻略的代碼。</p>
+                    <p>這不只是做遊戲，這是一個讓玩家心甘情願獻上靈魂的聖杯戰爭。</p>
+                    <p>準備好了嗎？你的錢包，已經死了。</p>
+                </section>
+
+                <!-- 章節二：時代變了 -->
+                <section class="book-section">
+                    <h3 id="section-1">一、 時代變了，大人：從「閉眼賺錢」到「極限求生」</h3>
+                    <p>回想二十年前，那時候做遊戲簡直是天堂，閉著眼睛都能賺錢。只要你的點子不要爛到太離譜，畫風稍微能看，或者運氣好搞到個動漫
+                        IP，隨便做做都能吸引百萬玩家，數錢數到手抽筋。那時候失敗？失敗是什麼？成本低到像去菜市場買菜，多試幾次總會中，爆款就像中樂透，拼的是人品。</p>
+                    <p>但現在？哈！歡迎來到地獄難度。</p>
+                    <p>現在每個人口袋裡都有手機，但他們的注意力比金魚還短。市場紅利？早被吃乾抹淨了。打廣告的費用（UA
+                        Cost）貴到讓你懷疑人生，感覺像是在燒美金取暖。我們被迫進入了一個超殘酷的「大逃殺」時代——文藝點叫「煉金時代」，通俗點叫「不卷就會死」。</p>
+                    <p>玩家的胃口被《原神》、《艾爾登法環》這些神仙打架的大作養刁了，你隨便做個「換皮」遊戲試試？他們連一眼都不會看，直接把你噴到懷疑人生。對於小團隊來說，只要核心玩法稍微無聊一點，或是美術風格稍微有點「復古」（我是說醜），整個工作室可能下個月就得集體去跑外送了。
+                    </p>
+                    <p>在這個容錯率比走鋼索還低的時代，成功的遊戲不能再靠「祖師爺賞飯吃」，而是要像精密鐘錶一樣，每一個齒輪都算得準準準。我們得搞懂那些以前覺得很玄學的事情：</p>
+                    <ul>
+                        <li>為什麼有的開放世界好玩到讓人想住在裡面，有的卻空虛寂寞覺得冷，像是在解一份超長的家事清單？這背後是不是有什麼空間心理學的陰謀？</li>
+                        <li>為什麼二次元宅宅願意花買名牌包的錢去抽一個由像素組成的虛擬老婆/老公？這絕對不是因為他們數學不好，而是在買「戀愛感」、買「陪伴」、買那該死的「心靈寄託」啊！</li>
+                        <li>為什麼「種田」跟「撿樹枝」這種在現實中會被嫌棄的勞動，到了遊戲裡變成現代人的療癒神藥？這是不是說明大家現實生活過得太苦，只想找個沒有 KPI 的地方躲起來？</li>
+                    </ul>
+                    <p>這些答案，不能再靠設計師拍腦袋說「我覺得這樣很酷」或美術說「我喜歡這個顏色」。我们要把心理学（看穿你的渴望）、社會學（看懂圈子怎麼玩）、經濟學（為什麼你願意掏錢）還有認知科學（腦袋怎麼運作）通通搬出來。把做遊戲這件事，從「靠感覺的藝術」，變成「有憑有據的科學」。
+                    </p>
+                </section>
+
+                <!-- 章節三：核心大法 -->
+                <section class="book-section">
+                    <h3 id="section-2">二、 我們的核心大法：以用戶為本的逆向推導（別再自嗨了）</h3>
+                    <p>這本書（總共八個部分啦，別被嚇到）不講廢話，核心只有一招，學會這招保你平安：「用戶導向逆向推導」（User-Centric Reverse Deduction）。</p>
+                    <p>以前那種「老子想做什麼就做什麼 -> 做完再求爺爺告奶奶找人來玩」的流程已經進棺材了。那樣做，你花三年青春和幾千萬做出來的東西，最後可能發現根本沒人要玩，那畫面太美我不敢看。</p>
+                    <p>我們這套方法是反過來的，先看數據跟心理學，穩當多了：</p>
+                    <ul>
+                        <li><strong>Who（到底是誰在玩？）：</strong>別再只說「18-25歲男性」這種像是在寫警局筆錄的籠統廢話了。我們要看的是世代差異！Z世代跟
+                            Alpha世代這些從小滑手機長大的「數位原住民」腦袋構造跟我們不一樣。還有他們的生活型態，是利用通勤擠地鐵那 10 分鐘玩？還是睡前躲在被窩裡玩 1 小時？手機是不是還在用
+                            iPhone 8？這決定了你的遊戲能不能跑得動，以及能不能讓他們爽。</li>
+                        <li><strong>Why（他們到底缺什麼？）：</strong>用自我決定論（SDT）來看，找出他們現實生活哪裡不滿足。是被老闆罵得像狗想找「成就感」？還是單身太久太孤單想找「歸屬感」？還是單純想逃離這個爛透了的現實世界？找到那個痛點，用力戳下去，那裡就是你的金礦。
+                        </li>
+                        <li><strong>How（怎麼做出來？）：</strong>這是最關鍵的一步。把那些抽象的情感，「翻譯」成代碼、數值跟美術。比如：為了讓玩家感到「焦慮」，我們就設計個倒數計時的音效（機制），讓他手忙腳亂（動態），最後過關時才會覺得超級過癮（美學）。
+                        </li>
+                    </ul>
+                    <p>意思是說，遊戲裡每個按鈕、每隻怪物的數值、每個劇情的轉折，都是有心理學根據的；每行代碼都是為了精準回應人性的渴望，而不是設計師自己在幻想。</p>
+                </section>
+
+                <!-- 章節四：全書導航 -->
+                <section class="book-section">
+                    <h3 id="section-3">三、 全書導航：極致深度拆解目錄</h3>
+                    <p>這不是一般的目錄，這是你的求生地圖。為了把遊戲研發這門「黑魔法」講清楚，我們把這本百科全書拆成了八個部分，二十四章：</p>
+                    <p><strong>第一部分：研發底層邏輯 (The Logic Engine)</strong></p>
+                    <ul>
+                        <li>第一章：研究邏輯的三層推導模型 (The Three-Layer Deduction) —— 別再拍腦袋了，從人口學到玩法機制的科學推演。</li>
+                        <li>第二章：用戶生命週期管理模型 (Lifecycle Management) —— 從路人到傳教士，如何讓玩家對你的遊戲上癮（Hook Model）。</li>
+                    </ul>
+                    <p><strong>第二部分：開放世界構建 (Open World Paradigm)</strong></p>
+                    <ul>
+                        <li>第三章：認知階段：環境開放與世界觀構建 (Cognitive Mapping) —— 拒絕「大而空」，用空間心理學引導玩家迷路（在好玩的地方迷路）。</li>
+                        <li>第四章：互動階段：確立玩家的主體性 (Interaction & Agency) —— 萬物皆可互動，讓世界對玩家的行為有反應。</li>
+                        <li>第五章：影響階段：敘事與世界的深度交融 (Narrative Fusion) —— 碎片化敘事與考古學，讓劇情像拼圖一樣有趣。</li>
+                        <li>第六章：戰鬥與解謎：服務於養成的驗證模組 (Combat & Puzzle) —— 戰鬥不是為了打架，是為了驗證成長。</li>
+                        <li>第七章：中美開放世界用戶畫像對比 (Cross-Cultural Analysis) —— 為什麼老外愛孤獨探索，我們愛熱鬧修仙？</li>
+                    </ul>
+                    <p><strong>第三部分：二次元：愛的經濟學 (The Economy of Love)</strong></p>
+                    <ul>
+                        <li>第八章：用戶分層與差異化訴求 (User Stratification) —— 婆羅門與萌新，如何搞定難搞的二次元圈層。</li>
+                        <li>第九章：抽卡心理學：決策與獲得感的閉環 (Gacha Psychology) —— 斯金納箱與準社會互動，讓玩家心甘情願喊老婆。</li>
+                        <li>第十章：內容營銷與渠道行為 (Content Marketing) —— 跨媒體敘事，如何把一個角色包裝成一個宇宙。</li>
+                    </ul>
+                    <p><strong>第四部分：社交與生活模擬 (Digital Sanctuaries)</strong></p>
+                    <ul>
+                        <li>第十一章：心理訴求的層級架構 (Psychological Hierarchy) —— 種田與撿樹枝背後的心理補償機制。</li>
+                        <li>第十二章：關鍵設計原則 (Design Principles) —— 「弱連結」社交，打造不打擾的溫柔陪伴。</li>
+                        <li>第十三章：社會情緒與題材選擇 (Social Mood Mapping) —— 原子化社會的解藥，異托邦的構建。</li>
+                    </ul>
+                    <p><strong>第五部分：末世生存敘事 (Narrative in Extremes)</strong></p>
+                    <ul>
+                        <li>第十四章：末世敘事的生命週期 (Apocalyptic Lifecycle) —— 從降臨到常態化，文明崩塌的美學。</li>
+                        <li>第十五章：視覺與場景設計 (Visual Aesthetics) —— 巨物恐懼與崇高感，嚇尿玩家的同時讓他們跪下膜拜。</li>
+                        <li>第十六章：目標線設計：生存、任務與善后 (Goal Design) —— 馬斯洛需求倒置，在絕望中尋找那一口麵包。</li>
+                    </ul>
+                    <p><strong>第六部分：IP 構建工程 (IP Engineering)</strong></p>
+                    <ul>
+                        <li>第十七章：IP構成的四大要素 (Four Pillars of IP) —— 世界觀、角色、主題、故事，缺一不可。</li>
+                        <li>第十八章：概念設計模型 (Concept Model) —— 榮格原型與反差萌，設計出讓人一眼記住的角色。</li>
+                        <li>第十九章：敘事設計：離散敘事與沉浸感 (Narrative Design) —— 資料庫敘事，讓玩家自己去拼湊真相。</li>
+                    </ul>
+                    <p><strong>第七部分：運營與商業化 (Ops & Biz)</strong></p>
+                    <ul>
+                        <li>第二十章：米遊社模式：工具與內容的雙輪驅動 (Community Model) —— 社區不是客服論壇，是玩家的第二個家。</li>
+                        <li>第二十一章：UGC生態的構建與激勵 (UGC Ecosystem) —— 讓玩家免費幫你打工，還做得比你好。</li>
+                        <li>第二十二章：虛擬偶像IP的孵化 (Vtuber Incubation) —— 中之人與皮套的靈魂交互，工業化造星流程。</li>
+                    </ul>
+                    <p><strong>第八部分：通用原則與戰略 (Principles & Strategy)</strong></p>
+                    <ul>
+                        <li>第二十三章：通用設計原則 (General Design Principles) —— 認知負荷理論，別把玩家的腦袋燒壞了。</li>
+                        <li>第二十四章：通用發行與運營原則 (Publishing Principles) —— 長尾理論與 MVP 戰略，老闆們的決策小抄。</li>
+                    </ul>
+                </section>
+
+                <!-- 章節五：使用指南 -->
+                <section class="book-section">
+                    <h3 id="section-4">四、 使用指南：這不是書，這是你的求生工具包</h3>
+                    <p>這不是那種讓你買回去供在書架上積灰塵的書，這是要放在桌邊、沾滿咖啡漬、隨時翻閱的實戰手冊！每一章都有「執行細節」跟「實戰案例」，保證能派上用場。</p>
+                    <ul>
+                        <li><strong>給 製作人
+                                (Producers)：</strong>重點看「核心探討問題」跟戰略層面。幫你一開始就選對賽道，不要把錢花錯地方（比如該做社交的時候跑去拚美術，那是自殺）。</li>
+                        <li><strong>給 主策劃/設計師 (Lead
+                                Designers)：</strong>每一章的「機制轉譯」跟「檢查表」就是你的吃飯傢伙。直接拿書裡的表格去檢查你的設計文件，不要再憑感覺做事了，你的感覺通常都是錯的。
+                        </li>
+                        <li><strong>給 運營與發行 (Ops &
+                                Publishing)：</strong>第七部分跟第二部分的用戶畫像分析是你的好幫手。幫你搞懂流量背後的真人到底在想什麼，寫出打動人心的文案，把私域流量做起來，省點廣告費，老闆會愛死你。
+                        </li>
+                    </ul>
+                    <p>遊戲是第九藝術，也是最複雜的心理工程，更是讓我們這群人痛並快樂著的志業。好了，廢話不多說，咖啡泡好了嗎？翻開第一部分，我們開始這場從人性深處出發的偉大（且瘋狂）的冒險吧！</p>
+                </section>
+            </article>
+
+            <hr class="section-divider">
+
+            <nav class="chapter-nav">
+                <a href="index.html" class="nav-btn prev-chapter">
+                    <span class="label">上一章</span>
+                    <span class="title">目錄</span>
+                </a>
+                <a href="s1.html" class="nav-btn next-chapter">
+                    <span class="label">下一章</span>
+                    <span class="title">section 01</span>
+                </a>
+            </nav>
+
+        </main>
+
+        <aside class="toc-sidebar">
+            <div class="toc-sticky-container">
+                <a href="index.html" class="back-to-catalog-link">
+                    <span class="arrow">←</span> 回到目錄
+                </a>
+                <hr class="toc-divider">
+                <span class="toc-header">本章索引</span>
+                <nav class="toc-list">
+                    <a href="#section-0" class="toc-link">緣起</a>
+                    <a href="#section-1" class="toc-link">一、時代變了</a>
+                    <a href="#section-2" class="toc-link">二、核心大法</a>
+                    <a href="#section-3" class="toc-link">三、全書導航</a>
+                    <a href="#section-4" class="toc-link">四、使用指南</a>
+                </nav>
+            </div>
+        </aside>
+
+        <footer class="catalog-footer">
+            本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
+            內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲設計實戰 - 第三章：核心循環與玩家回饋</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="catalog.html" class="floating-home-btn" title="回到目錄">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="chapter-banner">
+        <div class="banner-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
+            alt="Game Design Banner">
+        <div class="banner-title">
+            <span class="chapter-number">Level 03</span>
+            <h1>核心循環與回饋</h1>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+
+        <main class="book-container">
+            <article class="chapter-content">
+
+                <div class="epigraph">
+                    <blockquote>
+                        「遊戲是一連串有趣的選擇。」
+                        <cite>—— 席德·梅爾 (Sid Meier)</cite>
+                    </blockquote>
+                </div>
+
+                <section class="book-section">
+                    <h3 id="section-1">1. 定義核心循環 (Core Loop)</h3>
+                    <p class="first-paragraph">
+                        在我們開始編寫任何程式碼之前，必須先問自己一個問題：玩家在遊戲中這 30 秒內主要在做什麼？這就是所謂的核心循環。
+                    </p>
+                    <p>
+                        一個成功的動作遊戲核心循環，通常包含以下三個關鍵要素（項目符號範例）：
+                    </p>
+                    <ul>
+                        <li><strong>行動 (Action)：</strong> 玩家進行操作，例如攻擊、跳躍或施法。</li>
+                        <li><strong>回饋 (Reward)：</strong> 遊戲給予立即反應，例如傷害數字、擊殺音效或掉落物。</li>
+                        <li><strong>擴展 (Expansion)：</strong> 玩家利用回饋來強化自己，準備迎接更強的挑戰。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-1-5">2. 實作步驟詳解</h3>
+                    <p>
+                        要實現完美的打擊感，我們不能只依賴動畫。請依照以下順序檢查你的戰鬥系統（編號清單範例）：
+                    </p>
+                    <ol>
+                        <li>檢查攻擊判定的時間點是否與動畫揮擊幀同步。</li>
+                        <li>在命中瞬間添加 0.1 秒的<strong>頓幀 (Hit Stop)</strong>。</li>
+                        <li>根據攻擊力度，施加對應強度的<strong>螢幕震動 (Screen Shake)</strong>。</li>
+                        <li>播放含有高頻與低頻層次的打擊音效。</li>
+                    </ol>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-2">3. 程式碼實作：震動回饋</h3>
+                    <p>以下是一個簡單的 Unity C# 範例，展示如何在攻擊命中時觸發震動：</p>
+                    <div class="code-block">
+                        <pre><code>// 簡單的相機震動邏輯
+public void TriggerShake(float duration, float magnitude) {
+    StartCoroutine(Shake(duration, magnitude));
+}</code></pre>
+                    </div>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-3">4. 視覺引導設計</h3>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1616499370260-485b3e5ed653?q=80&w=2070&auto=format&fit=crop"
+                            alt="UI 設計示意圖">
+                        <figcaption>圖 3-1：利用光影與 UI 引導玩家視線的範例。</figcaption>
+                    </figure>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-4">5. 數值平衡表</h3>
+                    <p>在設計敵人強度時，我們採用動態難度曲線：</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>敵人單位</th>
+                                    <th>HP (生命)</th>
+                                    <th>ATK (攻擊)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>史萊姆 (Slime)</td>
+                                    <td>50</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>菁英騎士 (Elite)</td>
+                                    <td>500</td>
+                                    <td>45</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-5">6. 本章總結</h3>
+                    <aside class="note-box">
+                        <strong>設計師筆記：</strong>
+                        <p>不要讓玩家去猜測他們該做什麼。記住：清晰度 > 複雜度。</p>
+                    </aside>
+                </section>
+
+            </article>
+
+            <hr class="section-divider">
+
+            <nav class="chapter-nav">
+                <a href="#" class="nav-btn prev-chapter">
+                    <span class="label">上一章</span>
+                    <span class="title">Level 02</span>
+                </a>
+                <a href="#" class="nav-btn next-chapter">
+                    <span class="label">下一章</span>
+                    <span class="title">Level 04</span>
+                </a>
+            </nav>
+
+        </main>
+
+        <aside class="toc-sidebar">
+            <div class="toc-sticky-container">
+                <a href="index.html" class="back-to-catalog-link">
+                    <span class="arrow">←</span> 回到課程目錄
+                </a>
+                <hr class="toc-divider">
+                <span class="toc-header">本章索引</span>
+                <nav class="toc-list">
+                    <a href="#section-1" class="toc-link">1. 定義核心循環</a>
+                    <a href="#section-1-5" class="toc-link">2. 實作步驟詳解</a>
+                    <a href="#section-2" class="toc-link">3. 程式碼實作</a>
+                    <a href="#section-3" class="toc-link">4. 視覺引導設計</a>
+                    <a href="#section-4" class="toc-link">5. 數值平衡表</a>
+                    <a href="#section-5" class="toc-link">6. 本章總結</a>
+                </nav>
+            </div>
+        </aside>
+
+        <footer class="catalog-footer">
+            本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
+            內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
