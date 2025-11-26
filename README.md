@@ -13,7 +13,7 @@
 
 本書已整合為單一文件，便於檢索與閱讀。
 
-* **[👉 點擊閱讀完整書稿 (Full Manuscript)](遊戲研發與發行全書 (The Game Dev's Black Book).md)**
+* **[👉 點擊閱讀完整書稿 (Full Manuscript)](https://github.com/momowangOUO/GameDev-BlackBook/blob/main/遊戲研發與發行全書%20(The%20Game%20Dev's%20Black%20Book).md)**
 * **[👉 點擊進入 Wiki 導航頁 (Chapter Navigation)](../../wiki)** (推薦！含章節跳轉與結構導覽)
 
 ---
