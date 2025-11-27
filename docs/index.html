@@ -4,21 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>遊戲研發與發行全書</title>
+    <title>遊戲研發與發行全書 | The Game Dev's Black Book</title>
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 頂部致謝條：低調專業 */
+        .tech-credit-bar {
+            text-align: center;
+            padding: 12px 0;
+            background: #f4f4f4;
+            color: #555;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #ddd;
+            line-height: 1.6;
+        }
+        .github-badges {
+            margin-top: 5px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .github-badges img { height: 20px; }
+
+        /* 選擇區域：紅藍藥丸佈局 */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        @media (max-width: 768px) { .choice-grid { grid-template-columns: 1fr; } }
+        
+        .choice-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: left;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .choice-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .choice-blue { border-top: 4px solid #6c757d; }
+        .choice-red { border-top: 4px solid #d9534f; background: #fffdfd; }
+
+        /* 分享區域：深色背景強調精英感 */
+        .share-section {
+            background: #2b2b2b;
+            color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .share-input-group {
+            display: flex;
+            gap: 10px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        .share-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #444;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 4px;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .copy-btn {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover { background: #c9302c; }
+        
+        /* 下載按鈕組 */
+        .hero-actions {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .action-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-family: 'Roboto Mono', monospace;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.2s;
+        }
+        .action-btn:hover {
+            background: #000;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
 <body>
 
+    <div class="tech-credit-bar">
+        <div>
+            ⚡ Site Infrastructure & Deployment Engineered by <strong>jerry88897</strong>
+            <br>
+            <span style="font-size: 0.75rem; opacity: 0.8;">特別感謝 <strong>jerry88897</strong> 構建網站基礎設施</span>
+        </div>
+        <div class="github-badges">
+            <a href="https://github.com/momowangOUO/GameDev-BlackBook" target="_blank">
+                <img src="https://img.shields.io/badge/SOURCE_CODE-ACCESS_GRANTED-black?style=flat-square&logo=github" alt="Source">
+            </a>
+            <a href="https://github.com/momowangOUO/GameDev-BlackBook/stargazers" target="_blank">
+                <img src="https://img.shields.io/github/stars/momowangOUO/GameDev-BlackBook?style=social" alt="Stars">
+            </a>
+        </div>
+    </div>
+
     <header class="catalog-hero">
         <div class="hero-content">
-            <span class="hero-subtitle">The Game Dev's Black Book</span>
+            <span class="hero-subtitle">v1.0.0 Release: The "Red Pill" for Game Devs</span>
             <h1 class="hero-title">《遊戲研發與發行全書》</h1>
-            <p class="hero-desc">別用愛發電！<br>遊戲設計：人性反向工程與頂級變現邏輯</p>
-            <a href="#toc-start" class="start-btn">開始閱讀</a>
+            <p class="hero-desc">STOP Working for Love.<br>這是行業巨頭收割玩家的底層源代碼。</p>
+            
+            <div class="hero-actions">
+                <a href="#choice-start" class="start-btn">做出選擇</a>
+                <a href="https://github.com/momowangOUO/GameDev-BlackBook" class="action-btn" target="_blank">查看源碼</a>
+            </div>
         </div>
         <div class="hero-bg-circle"></div>
     </header>
@@ -26,15 +153,79 @@
     <main class="book-container catalog-container">
 
         <section class="foreword-section">
-            <h2>書籍總覽與核心主張</h2>
-            <p>
-                本書將遊戲研發從「藝術」升維為「有憑有據的科學」。<br>它揭示了行業巨頭用來鎖死玩家的底層邏輯:<br>「用戶導向逆向推導」（User-Centric Reverse Deduction）。
-            </p>
+            <h2 style="text-align: center;">🕳️ 兔子洞裡有什麼？</h2>
+            <p style="text-align: center; font-weight: bold; margin-bottom: 30px;">本書不談情懷，只談控制。</p>
+            
+            <p>它揭露了那些讓 30 億人像小白鼠一樣點擊屏幕的殘酷真相：</p>
+            <ul style="line-height: 1.8; margin-bottom: 30px;">
+                <li>❌ <strong>為什麼你的遊戲好玩卻沒人付費？</strong><br>因為你沒學會販賣焦慮。</li>
+                <li>💊 <strong>為什麼垃圾遊戲能月入過億？</strong><br>因為他們掌握了合法成癮的化學方程式。</li>
+                <li>💀 <strong>為什麼獨立遊戲必死？</strong><br>因為你試圖用靈魂去對抗別人的工業化收割機。</li>
+            </ul>
 
             <aside class="note-box">
-                <strong>給讀者的話：</strong>
-                <p>我們販賣的不是程式碼，是玩家的渴望與多巴胺。</p>
+                <strong>⚠️ 冷血邏輯：</strong>
+                <p>這裡沒有雞湯。只有關於掠奪注意力、操縱決策與構建數位監獄的科學。</p>
             </aside>
+        </section>
+
+        <hr class="section-divider">
+
+        <section id="choice-start" style="margin: 40px 0;">
+            <h2 style="text-align: center;">⚡ 做出選擇</h2>
+            <p style="text-align: center;">你有兩個選擇，且無法回頭：</p>
+
+            <div class="choice-grid">
+                <div class="choice-card choice-blue">
+                    <h3 style="color: #6c757d; margin-top: 0;">💊 選項一：離開</h3>
+                    <p style="color: #666; font-size: 0.95rem;">
+                        關掉這個頁面。<br><br>
+                        繼續相信遊戲是關於快樂與夢想的，做一個幸福的創作者。<br>
+                        <strong>（然後默默消亡）</strong>
+                    </p>
+                </div>
+
+                <div class="choice-card choice-red">
+                    <h3 style="color: #d9534f; margin-top: 0;">🔥 選項二：覺醒</h3>
+                    <p style="color: #333; font-size: 0.95rem;">
+                        <strong>下載這份文件。</strong><br><br>
+                        承認遊戲是關於人性弱點的精確計算，拿起這把手術刀，<br>
+                        <strong>成為遊戲世界的造物主。</strong>
+                    </p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://github.com/momowangOUO/GameDev-BlackBook/releases" target="_blank" style="color: #d9534f; font-weight: bold; text-decoration: underline;">
+                            [ 點擊獲取 PDF / ePub ]
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; color: #d9534f; font-weight: bold; margin-top: 20px;">但請記住：一旦你打開它，就再也回不去了。</p>
+        </section>
+
+        <section class="share-section">
+            <h3 style="margin-top: 0; color: #fff;">👑 知識是強者的特權，傳播是智者的本能</h3>
+            <p style="font-size: 0.95rem; color: #ccc; line-height: 1.6;">
+                不要把這本書藏起來。只有弱者才試圖通過信息封鎖來建立壁壘，<br>
+                真正的強者，通過武裝更多的大腦來進化整個生態。
+            </p>
+            <p style="color: #d9534f; font-weight: bold; margin-top: 20px;">
+                👇 點擊複製火種鏈接，證明你已經看清了矩陣的代碼：
+            </p>
+            
+            <div class="share-input-group">
+                <input type="text" id="shareLink" value="https://momowangouo.github.io/GameDev-BlackBook/index.html" readonly class="share-input">
+                <button onclick="copyLink()" class="copy-btn">複製鏈接 (Copy)</button>
+            </div>
+            
+            <div id="copyMsg" style="color: #5cb85c; height: 20px; opacity: 0; transition: opacity 0.3s; font-weight: bold; margin-top: 10px; font-size: 0.9rem;">
+                ✅ 火種已提取。去喚醒更多人吧。
+            </div>
+
+            <div style="margin-top: 25px;">
+                <a href="https://github.com/momowangOUO/GameDev-BlackBook/stargazers" target="_blank" style="color: #aaa; text-decoration: underline; font-size: 0.85rem;">
+                    ★ 前往 GitHub 點亮 Star，為這場革命注入燃料
+                </a>
+            </div>
         </section>
 
         <hr class="section-divider">
@@ -42,51 +233,72 @@
         <div id="toc-start" class="catalog-grid">
 
             <div class="phase-group">
-                <h3 class="phase-title">緣起</h3>
-
+                <h3 class="phase-title">緣起 (Origin)</h3>
                 <a href="s0.html" class="chapter-card active">
                     <div class="card-status">00</div>
                     <div class="card-info">
-                        <span class="badge-current">閱讀中</span>
+                        <span class="badge-current">必讀</span>
                         <h4>section 00: 緣起</h4>
-                        <span class="card-desc">別再用愛發電了，來點虛擬世界的「黑魔法」吧!</span>
+                        <span class="card-desc">別再用愛發電了。歡迎來到虛擬世界的「黑魔法」俱樂部。</span>
                     </div>
                     <div class="card-icon arrow">→</div>
                 </a>
             </div>
 
             <div class="phase-group">
-                <h3 class="phase-title">I. 研發底層邏輯 (Vol 1: The Logic Engine)</h3>
-
+                <h3 class="phase-title">I. 研發底層邏輯 (Logic Engine)</h3>
                 <a href="s1.html" class="chapter-card">
                     <div class="card-status">01</div>
                     <div class="card-info">
-                        <h4>section 01: 研究邏輯的三層推導模型</h4>
-                        <span class="card-desc">別再拍腦袋了，從人口學到玩法機制的科學推演。</span>
+                        <h4>section 01: 研究邏輯的三層推導</h4>
+                        <span class="card-desc">別再拍腦袋了。從人口學到玩法機制的科學推演。</span>
                     </div>
                     <div class="card-icon arrow">→</div>
                 </a>
-
                 <a href="#" class="chapter-card">
                     <div class="card-status">02</div>
                     <div class="card-info">
-                        <h4>section 02: 用戶生命週期管理模型</h4>
+                        <h4>section 02: 用戶生命週期管理</h4>
                         <span class="card-desc">從路人到傳教士，如何讓玩家對你的遊戲上癮（Hook Model）。</span>
                     </div>
                     <div class="card-icon arrow">→</div>
                 </a>
             </div>
 
-        </div>
+            </div>
 
     </main>
 
     <footer class="catalog-footer">
-        本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
-        內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        本書由 魔魔王 (momowang7758258@gmail.com) 於2025年基於行業經驗重構而成。<br>
+        內容採用 CC BY-SA 4.0 協議發布。<br>
+        <br>
+        <a href="https://github.com/momowangOUO/GameDev-BlackBook" style="color: #666; text-decoration: none; border-bottom: 1px dotted #999;">View Source on GitHub</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function copyLink() {
+            var copyText = document.getElementById("shareLink");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // 兼容手機端
+            
+            navigator.clipboard.writeText(copyText.value).then(function() {
+                var msg = document.getElementById("copyMsg");
+                msg.style.opacity = 1;
+                setTimeout(function(){ msg.style.opacity = 0; }, 3000);
+            }, function(err) {
+                // 降級處理
+                try {
+                    document.execCommand('copy');
+                    var msg = document.getElementById("copyMsg");
+                    msg.style.opacity = 1;
+                    setTimeout(function(){ msg.style.opacity = 0; }, 3000);
+                } catch (err) {
+                    alert("複製失敗，請手動複製！");
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
