@@ -193,6 +193,26 @@
             box-shadow: 0 6px 15px rgba(36, 41, 47, 0.4);
             color: #fff;
         }
+        /* Buy Me a Coffee 按鈕樣式 */
+        .bmc-btn {
+            background: #FFDD00; /* BMC 官方黃色 */
+            color: #000000;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 10px rgba(255, 221, 0, 0.3);
+            font-family: 'Roboto Mono', monospace; /* 保持字體一致 */
+        }
+        .bmc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 221, 0, 0.4);
+            background: #ffea5c; /* hover 時稍微變亮 */
+        }
 
         .share-box {
             display: flex;
@@ -309,16 +329,27 @@
             </div>
         </div>
 
-        <section class="emotional-cta">
+<section class="emotional-cta">
             <div class="cta-title">🔥 讓這把火燒得更旺一些</div>
 
             <div class="cta-desc">
                 <p>這是一個沒有廣告預算的開源項目，我們唯一的推廣渠道就是<b>「你」</b>。</p>
                 <p>如果這本書裡的某個觀點，幫你省下了數月的彎路，或者點醒了迷茫的你，<br>
-                    請考慮給予我們一點 <span class="cta-highlight">免費的鼓勵</span>：</p>
+                    請考慮給予我們一點 <span class="cta-highlight">免費的鼓勵</span> 或 <span class="cta-highlight" style="background: rgba(255, 221, 0, 0.2); color: #b38b00;">實質的支持</span>：</p>
             </div>
 
             <div class="action-group">
+                <a href="https://buymeacoffee.com/momowang?l=en" target="_blank" class="bmc-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                        <line x1="6" y1="1" x2="6" y2="4"></line>
+                        <line x1="10" y1="1" x2="10" y2="4"></line>
+                        <line x1="14" y1="1" x2="14" y2="4"></line>
+                    </svg>
+                    請我喝杯咖啡
+                </a>
+
                 <a href="https://github.com/momowangOUO/GameDev-BlackBook" target="_blank" class="star-btn-big">
                     <svg height="20" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true"
                         fill="currentColor">
@@ -342,11 +373,9 @@
             </div>
 
             <p style="margin-top: 15px; font-size: 0.85rem; color: #888;">
-                * 每一個 Star 都是對我們持續更新的燃料。
+                * 每一個 Star 與贊助都是對我們持續更新的燃料。
             </p>
         </section>
-
-        <hr class="section-divider">
 
         <div id="toc-start" class="catalog-grid">
 
