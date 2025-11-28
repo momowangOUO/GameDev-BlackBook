@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>遊戲研發與發行全書 | The Game Dev's Black Book</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
     <style>
         /* 1. 頂部致謝條：雙語、低調、專業 */
         .tech-credit-bar {
@@ -20,8 +22,11 @@
             border-bottom: 1px solid #333;
             letter-spacing: 0.5px;
         }
-        .tech-credit-bar strong { color: #fff; }
-        
+
+        .tech-credit-bar strong {
+            color: #fff;
+        }
+
         .github-badges {
             margin-top: 6px;
             display: flex;
@@ -29,7 +34,10 @@
             align-items: center;
             gap: 10px;
         }
-        .github-badges img { height: 20px; }
+
+        .github-badges img {
+            height: 20px;
+        }
 
         /* 2. 兔子洞區域：強調真相 */
         .rabbit-hole-section {
@@ -38,6 +46,7 @@
             max-width: 750px;
             margin: 0 auto;
         }
+
         .truth-list {
             text-align: left;
             background: #fff5f5;
@@ -47,11 +56,15 @@
             border-radius: 4px;
             color: #444;
         }
+
         .truth-item {
             margin-bottom: 15px;
             line-height: 1.6;
         }
-        .truth-item strong { color: #d9534f; }
+
+        .truth-item strong {
+            color: #d9534f;
+        }
 
         /* 3. 做出選擇：終端機風格 (酷一點的文字呈現) */
         .terminal-box {
@@ -63,10 +76,11 @@
             text-align: left;
             margin: 40px auto;
             max-width: 700px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             border: 1px solid #333;
             position: relative;
         }
+
         .terminal-header {
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
@@ -74,11 +88,13 @@
             color: #888;
             font-size: 0.8rem;
         }
+
         .terminal-text {
             line-height: 1.8;
             font-size: 0.95rem;
             color: #ddd;
         }
+
         .terminal-cursor {
             display: inline-block;
             width: 8px;
@@ -86,7 +102,20 @@
             background: #00ff00;
             animation: blink 1s infinite;
         }
-        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
 
         /* 4. 情感激勵區 (Star & Share) - 重點優化 */
         .emotional-cta {
@@ -97,29 +126,36 @@
             margin: 50px auto;
             max-width: 750px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
         }
+
         /* 金色光暈效果，強調價值 */
         .emotional-cta::before {
             content: "";
             position: absolute;
-            top: 0; left: 0; right: 0; height: 4px;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
             background: linear-gradient(90deg, #ffd700, #ffaa00);
         }
+
         .cta-title {
             font-size: 1.4rem;
             font-weight: bold;
             color: #24292f;
             margin-bottom: 15px;
         }
+
         .cta-desc {
             font-size: 1rem;
             color: #555;
             line-height: 1.8;
             margin-bottom: 25px;
         }
+
         .cta-highlight {
             color: #d9534f;
             font-weight: bold;
@@ -127,7 +163,7 @@
             padding: 2px 6px;
             border-radius: 4px;
         }
-        
+
         /* 交互按鈕組 */
         .action-group {
             display: flex;
@@ -136,9 +172,11 @@
             flex-wrap: wrap;
             margin-top: 20px;
         }
+
         .star-btn-big {
             background: #24292f;
-            color: #ffd700; /* 金色星星 */
+            color: #ffd700;
+            /* 金色星星 */
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: bold;
@@ -149,12 +187,13 @@
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 10px rgba(36, 41, 47, 0.3);
         }
+
         .star-btn-big:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(36, 41, 47, 0.4);
             color: #fff;
         }
-        
+
         .share-box {
             display: flex;
             border: 1px solid #ccc;
@@ -164,6 +203,7 @@
             max-width: 400px;
             flex: 1;
         }
+
         .share-input {
             border: none;
             flex: 1;
@@ -174,6 +214,7 @@
             color: #555;
             background: transparent;
         }
+
         .copy-btn {
             background: #28a745;
             color: white;
@@ -185,7 +226,10 @@
             font-size: 0.9rem;
             transition: background 0.2s;
         }
-        .copy-btn:hover { background: #218838; }
+
+        .copy-btn:hover {
+            background: #218838;
+        }
 
         /* 下載按鈕 */
         .download-btn {
@@ -199,8 +243,10 @@
             font-size: 0.9rem;
             transition: background 0.2s;
         }
-        .download-btn:hover { background: rgba(255,255,255,0.2); }
 
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 
@@ -225,9 +271,10 @@
             <span class="hero-subtitle">v1.0.0 Release: The "Red Pill" for Game Devs</span>
             <h1 class="hero-title">《遊戲研發與發行全書》</h1>
             <p class="hero-desc">STOP Working for Love.<br>這是行業巨頭收割玩家的底層源代碼。</p>
-            
+
             <div style="margin-top: 20px;">
-                <a href="https://github.com/momowangOUO/GameDev-BlackBook/releases" class="download-btn" target="_blank">📥 下載 PDF / ePub 電子書</a>
+                <a href="https://github.com/momowangOUO/GameDev-BlackBook/releases" class="download-btn"
+                    target="_blank">📥 下載 PDF / ePub 電子書</a>
             </div>
         </div>
         <div class="hero-bg-circle"></div>
@@ -238,7 +285,7 @@
         <section class="rabbit-hole-section">
             <h2 style="font-size: 1.8rem; margin-bottom: 10px;">🕳️ 兔子洞裡有什麼？</h2>
             <p style="color: #666; font-style: italic;">本書不談情懷，只談控制。</p>
-            
+
             <div class="truth-list">
                 <div class="truth-item">❌ <strong>為什麼你的遊戲好玩卻沒人付費？</strong><br>因為你沒學會販賣焦慮。</div>
                 <div class="truth-item">💊 <strong>為什麼垃圾遊戲能月入過億？</strong><br>因為他們掌握了合法成癮的化學方程式。</div>
@@ -264,29 +311,36 @@
 
         <section class="emotional-cta">
             <div class="cta-title">🔥 讓這把火燒得更旺一些</div>
-            
+
             <div class="cta-desc">
                 <p>這是一個沒有廣告預算的開源項目，我們唯一的推廣渠道就是<b>「你」</b>。</p>
                 <p>如果這本書裡的某個觀點，幫你省下了數月的彎路，或者點醒了迷茫的你，<br>
-                請考慮給予我們一點 <span class="cta-highlight">免費的鼓勵</span>：</p>
+                    請考慮給予我們一點 <span class="cta-highlight">免費的鼓勵</span>：</p>
             </div>
 
             <div class="action-group">
                 <a href="https://github.com/momowangOUO/GameDev-BlackBook" target="_blank" class="star-btn-big">
-                    <svg height="20" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true" fill="currentColor"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
+                    <svg height="20" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true"
+                        fill="currentColor">
+                        <path
+                            d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z">
+                        </path>
+                    </svg>
                     前往 GitHub 點亮 Star
                 </a>
 
                 <div class="share-box">
-                    <input type="text" id="shareLink" value="https://momowangouo.github.io/GameDev-BlackBook/index.html" readonly class="share-input">
+                    <input type="text" id="shareLink" value="https://momowangouo.github.io/GameDev-BlackBook/index.html"
+                        readonly class="share-input">
                     <button onclick="copyLink()" class="copy-btn">複製連結</button>
                 </div>
             </div>
-            
-            <div id="copyMsg" style="color: #28a745; margin-top: 10px; font-size: 0.85rem; height: 1.2em; opacity: 0; transition: opacity 0.3s;">
+
+            <div id="copyMsg"
+                style="color: #28a745; margin-top: 10px; font-size: 0.85rem; height: 1.2em; opacity: 0; transition: opacity 0.3s;">
                 ✅ 鏈接已複製！感謝你的傳播。
             </div>
-            
+
             <p style="margin-top: 15px; font-size: 0.85rem; color: #888;">
                 * 每一個 Star 都是對我們持續更新的燃料。
             </p>
@@ -310,26 +364,242 @@
             </div>
 
             <div class="phase-group">
-                <h3 class="phase-title">I. 研發底層邏輯 (Logic Engine)</h3>
+                <h3 class="phase-title">I. 研發底層邏輯 (The Logic Engine)</h3>
                 <a href="s1.html" class="chapter-card">
                     <div class="card-status">01</div>
                     <div class="card-info">
-                        <h4>section 01: 研究邏輯的三層推導</h4>
-                        <span class="card-desc">拒絕拍腦袋。從人口學到玩法機制的科學推演。</span>
+                        <h4>section 01: 研究邏輯的三層推導模型</h4>
+                        <span class="card-desc">Who, Why, How</span>
                     </div>
                     <div class="card-icon arrow">→</div>
                 </a>
-                <a href="#" class="chapter-card">
+                <a href="s2.html" class="chapter-card">
                     <div class="card-status">02</div>
                     <div class="card-info">
-                        <h4>section 02: 用戶生命週期管理</h4>
-                        <span class="card-desc">從路人到傳教士，如何設計讓大腦無法拒絕的 Hook Model。</span>
+                        <h4>section 02: 用戶生命週期管理模型</h4>
+                        <span class="card-desc">Hook Model</span>
                     </div>
                     <div class="card-icon arrow">→</div>
                 </a>
             </div>
 
+            <div class="phase-group">
+                <h3 class="phase-title">II. 開放世界構建 (Open World Paradigm)</h3>
+                <a href="s3.html" class="chapter-card">
+                    <div class="card-status">03</div>
+                    <div class="card-info">
+                        <h4>section 03: 認知階段</h4>
+                        <span class="card-desc">環境開放與世界觀構建</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s4.html" class="chapter-card">
+                    <div class="card-status">04</div>
+                    <div class="card-info">
+                        <h4>section 04: 互動階段</h4>
+                        <span class="card-desc">確立玩家的主體性</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s5.html" class="chapter-card">
+                    <div class="card-status">05</div>
+                    <div class="card-info">
+                        <h4>section 05: 影響階段</h4>
+                        <span class="card-desc">敘事與世界的深度交融</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s6.html" class="chapter-card">
+                    <div class="card-status">06</div>
+                    <div class="card-info">
+                        <h4>section 06: 戰鬥與解謎</h4>
+                        <span class="card-desc">服務於養成的驗證模組</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s7.html" class="chapter-card">
+                    <div class="card-status">07</div>
+                    <div class="card-info">
+                        <h4>section 07: 中美開放世界用戶畫像對比</h4>
+                        <span class="card-desc">文化差異與設計定錨</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
             </div>
+
+            <div class="phase-group">
+                <h3 class="phase-title">III. 二次元：愛的經濟學 (The Economy of Love)</h3>
+                <a href="s8.html" class="chapter-card">
+                    <div class="card-status">08</div>
+                    <div class="card-info">
+                        <h4>section 08: 用戶分層與差異化訴求</h4>
+                        <span class="card-desc">婆羅門與萌新的生態位</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s9.html" class="chapter-card">
+                    <div class="card-status">09</div>
+                    <div class="card-info">
+                        <h4>section 09: 抽卡心理學</h4>
+                        <span class="card-desc">決策與獲得感的閉環</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s10.html" class="chapter-card">
+                    <div class="card-status">10</div>
+                    <div class="card-info">
+                        <h4>section 10: 內容營銷與渠道行為</h4>
+                        <span class="card-desc">跨媒體敘事策略</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+            </div>
+
+            <div class="phase-group">
+                <h3 class="phase-title">IV. 社交與生活模擬 (Digital Sanctuaries)</h3>
+                <a href="s11.html" class="chapter-card">
+                    <div class="card-status">11</div>
+                    <div class="card-info">
+                        <h4>section 11: 心理訴求的層級架構</h4>
+                        <span class="card-desc">種田背後的心理補償</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s12.html" class="chapter-card">
+                    <div class="card-status">12</div>
+                    <div class="card-info">
+                        <h4>section 12: 關鍵設計原則</h4>
+                        <span class="card-desc">不打工、輕社交</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s13.html" class="chapter-card">
+                    <div class="card-status">13</div>
+                    <div class="card-info">
+                        <h4>section 13: 社會情緒與題材選擇</h4>
+                        <span class="card-desc">原子化社會的解藥</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+            </div>
+
+            <div class="phase-group">
+                <h3 class="phase-title">V. 末世生存敘事 (Narrative in Extremes)</h3>
+                <a href="s14.html" class="chapter-card">
+                    <div class="card-status">14</div>
+                    <div class="card-info">
+                        <h4>section 14: 末世敘事的生命週期</h4>
+                        <span class="card-desc">從降臨到常態化</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s15.html" class="chapter-card">
+                    <div class="card-status">15</div>
+                    <div class="card-info">
+                        <h4>section 15: 視覺與場景設計</h4>
+                        <span class="card-desc">巨物恐懼與崇高感</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s16.html" class="chapter-card">
+                    <div class="card-status">16</div>
+                    <div class="card-info">
+                        <h4>section 16: 目標線設計</h4>
+                        <span class="card-desc">生存、任務與善后</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+            </div>
+
+            <div class="phase-group">
+                <h3 class="phase-title">VI. IP 構建工程 (IP Engineering)</h3>
+                <a href="s17.html" class="chapter-card">
+                    <div class="card-status">17</div>
+                    <div class="card-info">
+                        <h4>section 17: IP 構成的四大要素</h4>
+                        <span class="card-desc">世界觀、角色、主題、故事</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s18.html" class="chapter-card">
+                    <div class="card-status">18</div>
+                    <div class="card-info">
+                        <h4>section 18: 概念設計模型</h4>
+                        <span class="card-desc">榮格原型與角色塑造</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s19.html" class="chapter-card">
+                    <div class="card-status">19</div>
+                    <div class="card-info">
+                        <h4>section 19: 敘事設計</h4>
+                        <span class="card-desc">離散敘事與沉浸感</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+            </div>
+
+            <div class="phase-group">
+                <h3 class="phase-title">VII. 運營與商業化 (Ops & Biz)</h3>
+                <a href="s20.html" class="chapter-card">
+                    <div class="card-status">20</div>
+                    <div class="card-info">
+                        <h4>section 20: 米遊社模式</h4>
+                        <span class="card-desc">工具與內容雙輪驅動</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s21.html" class="chapter-card">
+                    <div class="card-status">21</div>
+                    <div class="card-info">
+                        <h4>section 21: UGC 生態的構建與激勵</h4>
+                        <span class="card-desc">讓玩家免費幫你打工</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s22.html" class="chapter-card">
+                    <div class="card-status">22</div>
+                    <div class="card-info">
+                        <h4>section 22: 虛擬偶像 IP 的孵化</h4>
+                        <span class="card-desc">皮套與中之人的靈魂交互</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+            </div>
+
+            <div class="phase-group">
+                <h3 class="phase-title">VIII. 通用原則與戰略 (Principles & Strategy)</h3>
+                <a href="s23.html" class="chapter-card">
+                    <div class="card-status">23</div>
+                    <div class="card-info">
+                        <h4>section 23: 通用設計原則</h4>
+                        <span class="card-desc">認知負荷理論</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+                <a href="s24.html" class="chapter-card">
+                    <div class="card-status">24</div>
+                    <div class="card-info">
+                        <h4>section 24: 通用發行與運營原則</h4>
+                        <span class="card-desc">MVP 戰略與長尾理論</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+            </div>
+
+            <div class="phase-group">
+                <h3 class="phase-title">結語 (Conclusion)</h3>
+                <a href="s25.html" class="chapter-card special-card">
+                    <div class="card-status">End</div>
+                    <div class="card-info">
+                        <h4>全書結語</h4>
+                        <span class="card-desc">獨立遊戲的生存之道（盜火者）</span>
+                    </div>
+                    <div class="card-icon arrow">→</div>
+                </a>
+            </div>
+
+        </div>
 
     </main>
 
@@ -337,25 +607,26 @@
         本書由 魔魔王 (momowang7758258@gmail.com) 於2025年基於行業經驗重構而成。<br>
         內容採用 CC BY-SA 4.0 協議發布。<br>
         <br>
-        <a href="https://github.com/momowangOUO/GameDev-BlackBook" style="color: #666; text-decoration: none; border-bottom: 1px dotted #999;">View Source on GitHub</a>
+        <a href="https://github.com/momowangOUO/GameDev-BlackBook"
+            style="color: #666; text-decoration: none; border-bottom: 1px dotted #999;">View Source on GitHub</a>
     </footer>
 
     <script>
         function copyLink() {
             var copyText = document.getElementById("shareLink");
             copyText.select();
-            copyText.setSelectionRange(0, 99999); 
-            
-            navigator.clipboard.writeText(copyText.value).then(function() {
+            copyText.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(copyText.value).then(function () {
                 var msg = document.getElementById("copyMsg");
                 msg.style.opacity = 1;
-                setTimeout(function(){ msg.style.opacity = 0; }, 3000);
-            }, function(err) {
+                setTimeout(function () { msg.style.opacity = 0; }, 3000);
+            }, function (err) {
                 try {
                     document.execCommand('copy');
                     var msg = document.getElementById("copyMsg");
                     msg.style.opacity = 1;
-                    setTimeout(function(){ msg.style.opacity = 0; }, 3000);
+                    setTimeout(function () { msg.style.opacity = 0; }, 3000);
                 } catch (err) {
                     alert("複製失敗，請手動複製！");
                 }
