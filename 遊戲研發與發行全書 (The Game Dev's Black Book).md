@@ -16,6 +16,7 @@
 
 * **作者身份：** 本書由 **魔魔王 (momowang7758258@gmail.com)** 基於行業經驗重構而成。
 * **開源協議：** 本書內容採用 **[CC BY-SA 4.0 協議](https://creativecommons.org/licenses/by-sa/4.0/)** 發布，請確保所有轉載和衍生作品均標註作者及來源。
+* **點讚支持：** 開源內容生產不易,如果喜歡本書內容,請到[我們的github倉庫](https://github.com/momowangOUO/GameDev-BlackBook)給我們一顆**免費的星星**,這是我們更新的最大動力!
 
 # **寫在前面：別再用愛發電了，來點虛擬世界的「黑魔法」吧**
 
