@@ -27,8 +27,7 @@
 
     <header class="chapter-banner">
         <div class="banner-overlay"></div>
-        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
-            alt="Combat & Puzzle Banner">
+        <img src="image/s6.jpg" alt="Combat & Puzzle Banner">
         <div class="banner-title">
             <span class="chapter-number">section 06</span>
             <h1>戰鬥與解謎：服務於養成的驗證模組</h1>
@@ -62,7 +61,7 @@
                         本章的核心觀點是：<strong>戰鬥與解謎不是目的，而是手段。它們是「驗證模組 (Verification Modules)」。</strong>
                         遊戲本質上是一個「學習-驗證」的循環。玩家在遊戲中會經歷兩個交替的階段：
                     </p>
-                    
+
                     <h4>1. 準備期 (Preparation Phase)</h4>
                     <ul>
                         <li><strong>行為：</strong>探索地圖、收集資源、強化裝備、學習新技能、閱讀攻略、調整 Build。</li>
@@ -72,7 +71,8 @@
                     <h4>2. 驗證期 (Verification Phase)</h4>
                     <ul>
                         <li><strong>行為：</strong>遭遇 Boss 戰、進入高難度副本、面對複雜機關。</li>
-                        <li><strong>心理：</strong>這是一個「釋放」與「確認」的過程。玩家將積累的數值和技巧轉化為勝利。玩家在這個階段獲得的是 <strong>「確認的勝任感」</strong>（我確實變強了）。</li>
+                        <li><strong>心理：</strong>這是一個「釋放」與「確認」的過程。玩家將積累的數值和技巧轉化為勝利。玩家在這個階段獲得的是
+                            <strong>「確認的勝任感」</strong>（我確實變強了）。</li>
                     </ul>
 
                     <aside class="note-box">
@@ -87,7 +87,8 @@
                 <section class="book-section">
                     <h3 id="section-2">二、 理論基石 I：心流通道與動態難度 (Flow & DDA)</h3>
                     <p>
-                        如何確保驗證過程既不無聊也不勸退？Mihaly Csikszentmihalyi 的 <strong>心流理論 (Flow Theory)</strong> 是唯一的答案，但在遊戲設計中，我們需要更精細的操作。
+                        如何確保驗證過程既不無聊也不勸退？Mihaly Csikszentmihalyi 的 <strong>心流理論 (Flow Theory)</strong>
+                        是唯一的答案，但在遊戲設計中，我們需要更精細的操作。
                     </p>
 
                     <h4>1. 心流通道 (The Flow Channel) 與「費羅感」</h4>
@@ -96,88 +97,114 @@
                         <li><strong>焦慮區 (Anxiety)：</strong>挑戰 >> 技能。玩家感到挫敗，手心出汗，想摔手柄。這通常發生在 Boss 數值設計不合理，或引導缺失時。</li>
                         <li><strong>無聊區 (Boredom)：</strong>技能 >> 挑戰。玩家感到乏味，開始看手機。這通常發生在玩家回到新手村，或者裝備碾壓後。</li>
                         <li><strong>心流區 (Flow)：</strong>挑戰 ≈ 技能。玩家忘記時間流逝，進入「忘我」狀態。</li>
-                        <li><strong>費羅感 (Fiero)：</strong>這是一種意大利語描述的「戰勝逆境後的極致快感」。要產生 Fiero，挑戰必須稍微 <strong>高於</strong> 玩家的舒適區，讓玩家經歷幾次失敗後險勝。設計師必須敢於讓玩家失敗，因為 「沒有痛楚，就沒有榮耀」。</li>
+                        <li><strong>費羅感 (Fiero)：</strong>這是一種意大利語描述的「戰勝逆境後的極致快感」。要產生 Fiero，挑戰必須稍微 <strong>高於</strong>
+                            玩家的舒適區，讓玩家經歷幾次失敗後險勝。設計師必須敢於讓玩家失敗，因為 「沒有痛楚，就沒有榮耀」。</li>
                     </ul>
                     <p>在開放世界中，控制心流極其困難，因為玩家可以自由去任何地方（可能 1 級就跑到了 50 級的高級區，或者 50 級還在 1 級區虐怪）。因此，我們需要引入 DDA。</p>
 
                     <h4>2. 動態難度調整 (Dynamic Difficulty Adjustment, DDA)</h4>
                     <p>系統在後台實時監控玩家表現，並微調遊戲參數，充當一個「隱形的地下城主 (DM)」。</p>
                     <ul>
-                        <li><strong>橡皮筋機制 (Rubber Banding)：</strong>最常見於賽車遊戲。當玩家落後時，AI 車手會減速等待；當玩家領先時，AI 會加速追趕。這保證了比賽永遠在「最後一圈」才分出勝負。</li>
-                        <li><strong>資源掉落與攻擊慾望干預：</strong>在《惡靈古堡 4 (Resident Evil 4)》中，如果玩家連續死亡或彈藥耗盡，系統會悄悄降低敵人的攻擊慾望（攻擊頻率變低）、減少敵人傷害，並大幅增加回血草藥和彈藥的掉落率。反之，如果玩家無傷通關，敵人會變得更兇猛。這創造了一種 <strong>「虛驚一場」</strong>的緊張感——玩家總是覺得自己彈盡糧絕，但總能在最後一刻撿到子彈。</li>
-                        <li><strong>AI 導演 (The AI Director)：</strong>在《Left 4 Dead》中，系統根據玩家的壓力值（心率估算、受傷頻率、彈藥量）來決定節奏。如果玩家壓力過大，系統會暫停刷怪，給予「安靜時刻」；如果玩家過於輕鬆，系統會刷新特感屍潮。這創造了 <strong>「張弛有度 (Pacing)」</strong> 的體驗。</li>
+                        <li><strong>橡皮筋機制 (Rubber Banding)：</strong>最常見於賽車遊戲。當玩家落後時，AI 車手會減速等待；當玩家領先時，AI
+                            會加速追趕。這保證了比賽永遠在「最後一圈」才分出勝負。</li>
+                        <li><strong>資源掉落與攻擊慾望干預：</strong>在《惡靈古堡 4 (Resident Evil
+                            4)》中，如果玩家連續死亡或彈藥耗盡，系統會悄悄降低敵人的攻擊慾望（攻擊頻率變低）、減少敵人傷害，並大幅增加回血草藥和彈藥的掉落率。反之，如果玩家無傷通關，敵人會變得更兇猛。這創造了一種
+                            <strong>「虛驚一場」</strong>的緊張感——玩家總是覺得自己彈盡糧絕，但總能在最後一刻撿到子彈。</li>
+                        <li><strong>AI 導演 (The AI Director)：</strong>在《Left 4
+                            Dead》中，系統根據玩家的壓力值（心率估算、受傷頻率、彈藥量）來決定節奏。如果玩家壓力過大，系統會暫停刷怪，給予「安靜時刻」；如果玩家過於輕鬆，系統會刷新特感屍潮。這創造了
+                            <strong>「張弛有度 (Pacing)」</strong> 的體驗。</li>
                     </ul>
                     <p><strong>注意：</strong>DDA 必須是 <strong>隱形</strong> 的。一旦玩家發現「我越菜遊戲越簡單」，成就感就會崩塌，玩家會覺得被系統「羞辱」或「施捨」。</p>
                 </section>
 
                 <section class="book-section">
                     <h3 id="section-3">三、 理論基石 II：驗證的多樣性 (Diversity of Verification)</h3>
-                    <p>我們必須承認一個殘酷的現實：沒有一種關卡能同時取悅所有人。根據 Richard Bartle 的玩家心理學模型，我們必須將「驗證」這一概念拆解為四個完全不同的維度，針對每一種「玩家物種」設計專屬的生態位。</p>
+                    <p>我們必須承認一個殘酷的現實：沒有一種關卡能同時取悅所有人。根據 Richard Bartle
+                        的玩家心理學模型，我們必須將「驗證」這一概念拆解為四個完全不同的維度，針對每一種「玩家物種」設計專屬的生態位。</p>
 
                     <h4>1. 殺手型 (Killers)：統治、破壞與權力意志</h4>
                     <p>「我來，我見，我征服。」<br>
-                    對於殺手型玩家，遊戲不是用來「體驗」的，是用來「征服」的。他們的核心驅動力是 <strong>權力 (Power)</strong> 與 <strong>優越感 (Superiority)</strong>。他們需要證明自己比系統強（PvE），或者比其他玩家強（PvP）。</p>
+                        對於殺手型玩家，遊戲不是用來「體驗」的，是用來「征服」的。他們的核心驅動力是 <strong>權力 (Power)</strong> 與 <strong>優越感
+                            (Superiority)</strong>。他們需要證明自己比系統強（PvE），或者比其他玩家強（PvP）。</p>
                     <ul>
-                        <li><strong>心理畫像：</strong>動機是將自己的意志強加於他人或環境。享受「掌控生死」的快感。痛點是數值平衡性差導致努力無效、缺乏排行榜導致榮耀無法展示、「保姆式」保護機制導致無法施展暴力。</li>
+                        <li><strong>心理畫像：</strong>動機是將自己的意志強加於他人或環境。享受「掌控生死」的快感。痛點是數值平衡性差導致努力無效、缺乏排行榜導致榮耀無法展示、「保姆式」保護機制導致無法施展暴力。
+                        </li>
                         <li><strong>驗證機制設計 (The Mechanics)：</strong>
                             <ul>
-                                <li><strong>硬核技巧驗證 (Skill Check - The Reflex)：</strong>幀數級博弈。設計需要極致反應的機制，如《隻狼》的 「識破 (Mikiri Counter)」 或《鬼武者》的 「一閃」。驗證標準精確到 0.1 秒。</li>
-                                <li><strong>數值強度驗證 (Gear Check - The Math)：</strong>DPS 檢測器 (DPS Check)。Boss 擁有「軟狂暴 (Soft Enrage)」機制（例如 3 分鐘後全場釋放毒氣），逼迫玩家優化輸出循環和裝備詞條。</li>
-                                <li><strong>統治力驗證 (Dominance - The Status)：</strong>非對稱破壞。允許玩家破壞場景中的關鍵設施，對 NPC 或其他玩家造成實質影響。設計「賞金獵人」系統，讓高戰力殺手可以合法地追殺其他玩家。</li>
+                                <li><strong>硬核技巧驗證 (Skill Check - The Reflex)：</strong>幀數級博弈。設計需要極致反應的機制，如《隻狼》的 「識破
+                                    (Mikiri Counter)」 或《鬼武者》的 「一閃」。驗證標準精確到 0.1 秒。</li>
+                                <li><strong>數值強度驗證 (Gear Check - The Math)：</strong>DPS 檢測器 (DPS Check)。Boss 擁有「軟狂暴
+                                    (Soft Enrage)」機制（例如 3 分鐘後全場釋放毒氣），逼迫玩家優化輸出循環和裝備詞條。</li>
+                                <li><strong>統治力驗證 (Dominance - The Status)：</strong>非對稱破壞。允許玩家破壞場景中的關鍵設施，對 NPC
+                                    或其他玩家造成實質影響。設計「賞金獵人」系統，讓高戰力殺手可以合法地追殺其他玩家。</li>
                             </ul>
                         </li>
-                        <li><strong>設計實例：PvPvE 的黑暗森林</strong><br>設計一個資源豐富的「高風險區」。玩家獲得的戰利品必須通過「信號彈」召喚直升機運走，信號彈會暴露位置，吸引怪物和其他殺手玩家。這考驗了殺手是否有能力在極端壓力下守護自己的戰利品，或者是否有能力掠奪他人。</li>
+                        <li><strong>設計實例：PvPvE
+                                的黑暗森林</strong><br>設計一個資源豐富的「高風險區」。玩家獲得的戰利品必須通過「信號彈」召喚直升機運走，信號彈會暴露位置，吸引怪物和其他殺手玩家。這考驗了殺手是否有能力在極端壓力下守護自己的戰利品，或者是否有能力掠奪他人。
+                        </li>
                     </ul>
 
                     <h4>2. 探索者型 (Explorers)：揭秘、越界與知識考古</h4>
                     <p>「真理就在那裡。」<br>
-                    對於探索者，遊戲是一個巨大的、等待被解開的謎題。他們不在乎數值多高，他們在乎「山的那邊是什麼」以及「如果我跳下去會發生什麼」。他們的核心驅動力是 <strong>好奇心 (Curiosity)</strong> 與 <strong>理解力 (Understanding)</strong>。</p>
+                        對於探索者，遊戲是一個巨大的、等待被解開的謎題。他們不在乎數值多高，他們在乎「山的那邊是什麼」以及「如果我跳下去會發生什麼」。他們的核心驅動力是 <strong>好奇心
+                            (Curiosity)</strong> 與 <strong>理解力 (Understanding)</strong>。</p>
                     <ul>
                         <li><strong>心理畫像：</strong>動機是繪製心智地圖，發現設計師藏起來的彩蛋，甚至尋找系統的漏洞。痛點是空氣牆、線性的一本道地圖、重複的素材堆砌。</li>
                         <li><strong>驗證機制設計 (The Mechanics)：</strong>
                             <ul>
                                 <li><strong>空間邏輯驗證 (Spatial Logic)：</strong>視覺引導解謎。不給任務標記，只給一張泛黃的手繪地圖或一句謎語。</li>
                                 <li><strong>系統邊界驗證 (Boundary Breaking)：</strong>跑酷挑戰與化學引擎實驗。驗證玩家對物理規則的理解。</li>
-                                <li><strong>知識考古 (Lore Archeology)：</strong>碎片化敘事。將一段完整的歷史打散在 50 個物品說明中。驗證玩家是否有耐心拼湊真相。</li>
+                                <li><strong>知識考古 (Lore Archeology)：</strong>碎片化敘事。將一段完整的歷史打散在 50 個物品說明中。驗證玩家是否有耐心拼湊真相。
+                                </li>
                             </ul>
                         </li>
-                        <li><strong>設計實例：倒置的塔</strong><br>設計一座「倒著生長」在深淵裡的塔。玩家必須從塔頂（地面）往下探索，重力場會發生紊亂。每一層都需要玩家理解一種新的物理規則（如「水往高處流」），最終在塔底發現這座塔倒置的歷史原因。</li>
+                        <li><strong>設計實例：倒置的塔</strong><br>設計一座「倒著生長」在深淵裡的塔。玩家必須從塔頂（地面）往下探索，重力場會發生紊亂。每一層都需要玩家理解一種新的物理規則（如「水往高處流」），最終在塔底發現這座塔倒置的歷史原因。
+                        </li>
                     </ul>
 
                     <h4>3. 成就者型 (Achievers)：積累、完滿與效率至上</h4>
                     <p>「100% 才是開始。」<br>
-                    對於成就者，遊戲是一份待辦事項清單（Checklist）。他們從「劃掉清單上的一項」中獲得巨大的多巴胺。他們的核心驅動力是 <strong>進度 (Progress)</strong> 與 <strong>資產積累 (Accumulation)</strong>。</p>
+                        對於成就者，遊戲是一份待辦事項清單（Checklist）。他們從「劃掉清單上的一項」中獲得巨大的多巴胺。他們的核心驅動力是 <strong>進度 (Progress)</strong> 與
+                        <strong>資產積累 (Accumulation)</strong>。</p>
                     <ul>
-                        <li><strong>心理畫像：</strong>動機是看著進度條從 99% 變成 100%，看著倉庫裡的材料堆積如山。他們是完美的「優化機器」。痛點是無法達成的成就、收益遞減過快、隨機性過強導致努力白費。</li>
+                        <li><strong>心理畫像：</strong>動機是看著進度條從 99% 變成
+                            100%，看著倉庫裡的材料堆積如山。他們是完美的「優化機器」。痛點是無法達成的成就、收益遞減過快、隨機性過強導致努力白費。</li>
                         <li><strong>驗證機制設計 (The Mechanics)：</strong>
                             <ul>
-                                <li><strong>全圖鑑驗證 (The Collection)：</strong>博物學家與套裝效應。每擊殺一種怪物、釣到一種魚、收集一種礦石，圖鑑就會點亮並顯示詳細數據。</li>
+                                <li><strong>全圖鑑驗證 (The
+                                        Collection)：</strong>博物學家與套裝效應。每擊殺一種怪物、釣到一種魚、收集一種礦石，圖鑑就會點亮並顯示詳細數據。</li>
                                 <li><strong>資源轉化效率 (Efficiency)：</strong>自動化生產與經濟霸權。驗證玩家是否能建立最高效的資源產出流水線或積累財富。</li>
                                 <li><strong>極限挑戰 (The Feat)：</strong>限制級通關與競速模式 (Speedrun)。在限制條件下通關，獲得專屬徽章。</li>
                             </ul>
                         </li>
-                        <li><strong>設計實例：傳奇之路</strong><br>設計一把「成長型武器」。這把武器初始很弱，但有 10 個解鎖階段。每個階段需要完成特定目標。這不是考驗操作，而是考驗玩家的 <strong>執行力</strong> 與 <strong>規劃能力</strong>。</li>
+                        <li><strong>設計實例：傳奇之路</strong><br>設計一把「成長型武器」。這把武器初始很弱，但有 10 個解鎖階段。每個階段需要完成特定目標。這不是考驗操作，而是考驗玩家的
+                            <strong>執行力</strong> 與 <strong>規劃能力</strong>。</li>
                     </ul>
 
                     <h4>4. 社交型 (Socializers)：連接、表演與部落歸屬</h4>
                     <p>「一個人玩有什麼意思？」<br>
-                    對於社交者，遊戲只是媒介，人才是內容。他們不在乎遊戲機制本身，而在乎遊戲能否作為「社交貨幣」。他們的核心驅動力是 <strong>關係 (Relationship)</strong> 與 <strong>共情 (Empathy)</strong>。</p>
+                        對於社交者，遊戲只是媒介，人才是內容。他們不在乎遊戲機制本身，而在乎遊戲能否作為「社交貨幣」。他們的核心驅動力是 <strong>關係 (Relationship)</strong> 與
+                        <strong>共情 (Empathy)</strong>。</p>
                     <ul>
-                        <li><strong>心理畫像：</strong>動機是與他人建立連接，在群體中找到位置，或者扮演一個角色。他們渴望「被需要」與「被關注」。痛點是強制單機內容、缺乏互動表情/動作、沒有公共聚集區。</li>
+                        <li><strong>心理畫像：</strong>動機是與他人建立連接，在群體中找到位置，或者扮演一個角色。他們渴望「被需要」與「被關注」。痛點是強制單機內容、缺乏互動表情/動作、沒有公共聚集區。
+                        </li>
                         <li><strong>驗證機制設計 (The Mechanics)：</strong>
                             <ul>
-                                <li><strong>協作依賴 (Interdependence)：</strong>職業互補與雙人謎題。如《雙人成行》，必須兩人同時操作機關才能通過。驗證溝通與默契。</li>
-                                <li><strong>社會資本驗證 (Social Capital)：</strong>師徒/導師系統與公會政治。高經驗玩家帶領新手通關，獲得專屬榮譽標識。驗證玩家的利他行為與領導力。</li>
+                                <li><strong>協作依賴 (Interdependence)：</strong>職業互補與雙人謎題。如《雙人成行》，必須兩人同時操作機關才能通過。驗證溝通與默契。
+                                </li>
+                                <li><strong>社會資本驗證 (Social
+                                        Capital)：</strong>師徒/導師系統與公會政治。高經驗玩家帶領新手通關，獲得專屬榮譽標識。驗證玩家的利他行為與領導力。</li>
                                 <li><strong>表演與表達 (Performance)：</strong>外觀定製與非語言交流。設計一個沒有戰鬥的「主城廣場」，驗證玩家的社交魅力。</li>
                             </ul>
                         </li>
-                        <li><strong>設計實例：篝火晚會</strong><br>在危險的野外設計安全的「營地」。在營地休息可以獲得強力 Buff，但必須由一名擁有「廚師」技能的玩家烹飪食物，一名擁有「樂師」技能的玩家演奏音樂。這創造了一個強制的社交場景，每個人都因為自己的非戰鬥技能而 「被隊伍需要」。</li>
+                        <li><strong>設計實例：篝火晚會</strong><br>在危險的野外設計安全的「營地」。在營地休息可以獲得強力
+                            Buff，但必須由一名擁有「廚師」技能的玩家烹飪食物，一名擁有「樂師」技能的玩家演奏音樂。這創造了一個強制的社交場景，每個人都因為自己的非戰鬥技能而 「被隊伍需要」。</li>
                     </ul>
                 </section>
 
                 <section class="book-section">
                     <h3 id="section-4">四、 關鍵案例分析 (Critical Case Analysis)</h3>
-                    
+
                     <h4>1. 《Hades (黑帝斯)》：死亡作為成長的一部分</h4>
                     <p>Roguelike 遊戲通常因為高懲罰（死亡重來）而勸退大眾玩家，但《Hades》將「死亡」變成了一種正向的敘事與資源驗證，創造了「越死越強」的循環。</p>
                     <ul>
@@ -185,9 +212,12 @@
                         <li><strong>Why：</strong>渴望 「即使失敗也有所收穫」 的安全感，以及對劇情碎片的好奇心。</li>
                         <li><strong>How (機制轉譯)：</strong>
                             <ul>
-                                <li><strong>雙重循環系統：</strong>外循環 (Meta-Progression) 用於永久強化屬性，保證數值上的「保底成長」；內循環 (Run-Based) 考驗玩家的「臨場構建能力」。</li>
-                                <li><strong>敘事驗證 (Narrative Reward)：</strong>死亡不是 Game Over，而是觸發新劇情的開關。只有死回家，才能和父親黑帝斯對話，推動故事發展。</li>
-                                <li><strong>神力模式 (God Mode)：</strong>一種顯性的 DDA。每死一次，減傷提升 2%，最高 80%。這給了手殘黨通關的希望，且不剝奪劇情的完整性。</li>
+                                <li><strong>雙重循環系統：</strong>外循環 (Meta-Progression) 用於永久強化屬性，保證數值上的「保底成長」；內循環 (Run-Based)
+                                    考驗玩家的「臨場構建能力」。</li>
+                                <li><strong>敘事驗證 (Narrative Reward)：</strong>死亡不是 Game
+                                    Over，而是觸發新劇情的開關。只有死回家，才能和父親黑帝斯對話，推動故事發展。</li>
+                                <li><strong>神力模式 (God Mode)：</strong>一種顯性的 DDA。每死一次，減傷提升 2%，最高
+                                    80%。這給了手殘黨通關的希望，且不剝奪劇情的完整性。</li>
                             </ul>
                         </li>
                     </ul>
@@ -199,7 +229,8 @@
                         <li><strong>Why：</strong>渴望 「智力上的勝任感」。解開謎題的那一刻，覺得自己是天才。</li>
                         <li><strong>How (機制轉譯)：</strong>
                             <ul>
-                                <li><strong>隱形教學 (Invisible Tutorial)：</strong>每一個關卡都是一道考題。Step 1：安全環境下展示機制。Step 2：引入危險或複雜度。Step 3：綜合考試。只有通過驗證，才能獲得新的工具。</li>
+                                <li><strong>隱形教學 (Invisible Tutorial)：</strong>每一個關卡都是一道考題。Step 1：安全環境下展示機制。Step
+                                    2：引入危險或複雜度。Step 3：綜合考試。只有通過驗證，才能獲得新的工具。</li>
                                 <li><strong>場景敘事：</strong>謎題本身是冷冰冰的實驗室，但牆後的塗鴉、破損的攝像頭、GLaDOS 越來越瘋狂的語音，講述了背後的恐怖故事。</li>
                             </ul>
                         </li>
@@ -212,9 +243,11 @@
                         <li><strong>Why：</strong>厭倦了數值碾壓，渴望刀劍相交的真實壓迫感與節奏感。</li>
                         <li><strong>How (機制轉譯)：</strong>
                             <ul>
-                                <li><strong>架勢條 (Posture Bar)：</strong>核心不是扣血，而是打崩架勢。這迫使玩家從「躲避/翻滾」轉向「進攻」和「完美格擋 (Deflect)」。戰鬥變成了高頻的節奏遊戲。</li>
+                                <li><strong>架勢條 (Posture Bar)：</strong>核心不是扣血，而是打崩架勢。這迫使玩家從「躲避/翻滾」轉向「進攻」和「完美格擋
+                                    (Deflect)」。戰鬥變成了高頻的節奏遊戲。</li>
                                 <li><strong>考試型 Boss 設計：</strong>每個 Boss 都是一位老師。蝴蝶夫人驗證「墊步與反擊」；弦一郎是綜合期中考；葦名一心是期末考。</li>
-                                <li><strong>結果：</strong>當玩家二周目面對曾經虐自己千百遍的 Boss 卻能無傷通關時，獲得的勝任感是數值遊戲無法比擬的——因為變強的不是角色數據，而是玩家自己的神經反射與判斷。</li>
+                                <li><strong>結果：</strong>當玩家二周目面對曾經虐自己千百遍的 Boss
+                                    卻能無傷通關時，獲得的勝任感是數值遊戲無法比擬的——因為變強的不是角色數據，而是玩家自己的神經反射與判斷。</li>
                             </ul>
                         </li>
                     </ul>
@@ -244,7 +277,8 @@
                     <ul style="list-style: none; padding-left: 0;">
                         <li>🔲 <strong>L1 環境暗示 (Subtle)：</strong>燈光照向關鍵開關，地板上的刮痕指向密門，鏡頭稍微偏移暗示方向。</li>
                         <li>🔲 <strong>L2 夥伴語音 (Direct)：</strong>隨行 NPC 自言自語：「那是個什麼開關？看起來可以用箭射。」（在玩家卡住 5 分鐘後觸發）。</li>
-                        <li>🔲 <strong>L3 UI 指引 (Explicit)：</strong>直接在目標上標記高亮，或提供「花費資源跳過」選項（在玩家卡住 15 分鐘或連續失敗 5 次後觸發）。給玩家一個「我只是不想浪費時間」的台階下。</li>
+                        <li>🔲 <strong>L3 UI 指引 (Explicit)：</strong>直接在目標上標記高亮，或提供「花費資源跳過」選項（在玩家卡住 15 分鐘或連續失敗 5
+                            次後觸發）。給玩家一個「我只是不想浪費時間」的台階下。</li>
                     </ul>
 
                     <p><strong>工具三：戰鬥風格兼容性矩陣 (Combat Style Matrix)</strong></p>
