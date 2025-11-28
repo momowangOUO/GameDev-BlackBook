@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲研發與發行全書 - 第七章：中美開放世界用戶畫像對比</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="index.html" class="floating-home-btn" title="回到目錄">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="chapter-banner">
+        <div class="banner-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1533038590840-1cde6e668a91?q=80&w=2070&auto=format&fit=crop"
+            alt="East West Contrast Banner">
+        <div class="banner-title">
+            <span class="chapter-number">section 07</span>
+            <h1>中美開放世界用戶畫像對比</h1>
+            <h2>Cross-Cultural Analysis: The East-West Divide in Open World Design</h2>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+
+        <main class="book-container">
+            <article class="chapter-content">
+
+                <div class="epigraph">
+                    <blockquote>
+                        「在西方，開放世界意味著『孤獨的自由』，你是荒野中的開拓者。在東方，開放世界意味著『熱鬧的江湖』，你是社會網絡中的節點。試圖用一套邏輯討好兩個市場，往往會導致兩邊都不買賬的平庸。」
+                        <cite>—— 跨文化遊戲研究員</cite>
+                    </blockquote>
+                </div>
+
+                <section class="book-section">
+                    <h3 id="section-1">一、 核心衝突：並不存在「全球通用」的玩家</h3>
+                    <p class="first-paragraph">
+                        在遊戲全球化的今天，開發者常陷入一個誤區：認為好玩的遊戲是通用的。然而，數據告訴我們一個殘酷的事實——中美玩家在開放世界品類上的偏好存在巨大的斷層。
+                    </p>
+                    <ul>
+                        <li><strong>美國玩家 (The Western Immersionist)：</strong>追求 <strong>「擬真 (Simulation)」</strong> 與 <strong>「代理權 (Agency)」</strong>。他們喜歡《碧血狂殺 2》中馬蛋會隨溫度縮小的細節，即便這會犧牲便利性。他們想要扮演「自己」。</li>
+                        <li><strong>中國玩家 (The Eastern Achiever)：</strong>追求 <strong>「數值成長 (Progression)」</strong> 與 <strong>「社交展示 (Social Display)」</strong>。他們喜歡《原神》或 MMO 式的數值反饋，即便這會犧牲擬真感。他們想要扮演「強者」或「被喜愛的角色」。</li>
+                    </ul>
+                    <p>
+                        本章將引入 Geert Hofstede 的文化維度理論，深度剖析這兩大市場背後的心理動機差異。
+                    </p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-2">二、 理論基石：Hofstede 文化維度在遊戲中的映射</h3>
+                    <p>
+                        Geert Hofstede 的文化維度理論不僅是跨國企業管理的聖經，更是全球化遊戲研發（Global Game Dev）的底層代碼。我們不能僅僅將差異歸結為「口味不同」，而是要深入到民族心理的根源。以下五個維度決定了玩家如何定義「樂趣」。
+                    </p>
+
+                    <h4>1. 個人主義 vs 集體主義 (Individualism vs. Collectivism, IDV)</h4>
+                    <p>「我是誰？」 vs 「我們是誰？」</p>
+                    <ul>
+                        <li><strong>美國 (極高個人主義 - IDV 91)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>英雄主義與自我實現。個體是社會的基本單位，每個人都渴望獨特。</li>
+                                <li><em>敘事映射：</em>偏好 「沈默的主角 (Silent Protagonist)」（如《Skyrim》、《Half-Life》）。留白的性格是為了讓玩家能將「自我」完全投射進去。故事是關於「我」如何改變世界，而非「我」如何融入集體。</li>
+                                <li><em>玩法映射：</em>孤獨探索：多人模式通常是選項而非強制。即便在 MMO 中，也傾向於 Solo Play。道德選擇：極度重視選擇權（Agency）。如果遊戲強迫玩家做某事，會引發強烈的逆反心理（Reactance）。</li>
+                                <li><em>痛點：</em>強制社交、依賴團隊配合的硬性門檻（如早期的《WOW》40人副本在現代西方市場的衰退）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>中國 (高集體主義 - IDV 20)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>圈層歸屬與面子文化。個體的價值往往通過其在群體中的位置來定義。</li>
+                                <li><em>敘事映射：</em>偏好 「群像劇 (Ensemble Cast)」。主角（如《仙劍》李逍遙、《原神》旅行者）有明確的性格和羈絆。玩家享受的是「看著他們的故事」，並與虛擬角色建立準社會關係。</li>
+                                <li><em>玩法映射：</em>強社交驅動：排行榜、公會戰（GvG）、全服喇叭。如果不跟別人比，或者沒有觀眾，單純的變強是沒有意義的（錦衣夜行）。帶妹/師徒文化：高玩享受帶領新手的榮耀感，這種社會資本的積累比遊戲內金幣更有價值。</li>
+                                <li><em>痛點：</em>過於孤獨的體驗（如《死亡擱淺》初期的勸退）、無法展示的成就（單機存檔）。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>2. 權力距離 (Power Distance Index, PDI)</h4>
+                    <p>「我們如何看待不平等？」</p>
+                    <ul>
+                        <li><strong>美國 (低權力距離 - PDI 40)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>追求平等與公平競爭（Fair Play）。權威是可以被挑戰的。</li>
+                                <li><em>付費觀：</em>極度厭惡 Pay-to-Win (P2W)。認為「花錢買數值」是作弊，破壞了「魔環 (Magic Circle)」的神聖性。所有玩家在起跑線上必須平等。可以接受 Pay-to-Skin（外觀）或 Pay-to-Skip（省時間，但有爭議）。</li>
+                                <li><em>設計映射：</em>技能樹和天賦必須對所有玩家開放，不能有「VIP 專屬技能」。</li>
+                            </ul>
+                        </li>
+                        <li><strong>中國 (高權力距離 - PDI 80)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>接受社會等級差異，崇拜強者。認為「特權」是成功的標誌。</li>
+                                <li><em>付費觀：</em>默認接受 P2W。認為「金錢也是實力的一種」。現實世界本就不公平，遊戲世界花錢變強是天經地義的。大 R (Whales) 享受在服務器中呼風喚雨、以一敵百的特權感（無雙體驗）。免費玩家 (Minnows) 在某種程度上接受成為大 R 的「遊戲內容」（陪玩），並寄希望於通過時間積累（肝）來縮小差距。</li>
+                                <li><em>設計映射：</em>VIP 等級系統、自動尋路（特權省力）、全服通告（特權展示）。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>3. 不確定性規避 (Uncertainty Avoidance Index, UAI)</h4>
+                    <p>「我們有多害怕未知？」</p>
+                    <ul>
+                        <li><strong>美國 (低規避 - UAI 46)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>冒險精神，容忍模糊性。未知意味著機會。</li>
+                                <li><em>設計映射：</em>喜歡 「弱引導 (Minimalist Guidance)」。湧現式玩法：像《艾爾登法環》或《BotW》，遊戲不告訴你去哪，你自己找。迷路被視為探索的樂趣（Serendipity）。複雜機制：願意花時間研究晦澀的 Build 和機制。</li>
+                                <li><em>痛點：</em>保姆級教學（Hand-holding）、自動尋路（破壞了探索感）。</li>
+                            </ul>
+                        </li>
+                        <li><strong>中國 (高規避 - UAI 30-40，但遊戲習慣表現為極高規避)：</strong>
+                            <ul>
+                                <li><em>註：</em>雖然中國社會 UAI 評分不高，但在遊戲消費場景中，由於高壓生活節奏，玩家表現出極高的「試錯成本敏感度」。</li>
+                                <li><em>心理根源：</em>追求確定性，害怕「加錯點」、「走彎路」、「練廢號」。</li>
+                                <li><em>設計映射：</em>喜歡 「強引導 (Railroading)」。自動化：自動尋路、一鍵裝備、推薦加點。數值透明：明確的戰鬥力數值（Combat Power）。玩家需要一個絕對的標尺來確認自己的成長，如果迷路了，會感到焦慮並認為是設計缺陷。</li>
+                                <li><em>痛點：</em>沒有小地圖、任務目標模糊、不可重置的天賦樹。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>4. 長期導向 vs 短期導向 (Long-Term vs. Short-Term Orientation, LTO)</h4>
+                    <p>「我們願意為未來犧牲現在嗎？」</p>
+                    <ul>
+                        <li><strong>美國 (短期導向 - LTO 26)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>及時行樂，重視當下的結果與真理。</li>
+                                <li><em>設計映射：</em>「單局體驗 (Session-based)」。喜歡《使命召喚》、《FIFA》這種單局結算快、反饋即時的遊戲。對於需要漫長鋪墊的「修仙式」成長缺乏耐心。</li>
+                                <li><em>留存策略：</em>依賴內容更新（DLC、新地圖）來維持新鮮感。</li>
+                            </ul>
+                        </li>
+                        <li><strong>中國 (極高長期導向 - LTO 87)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>吃苦耐勞，延遲滿足。願意為了長遠的目標忍受當下的枯燥。</li>
+                                <li><em>設計映射：</em>「刷刷刷 (Grinding)」。資源積累：喜歡看著倉庫裡的材料堆積如山。日常任務：能夠忍受長達數月的重複日常任務（打卡上班），只為了最後獲得一把神兵。這種極致的耐心是歐美玩家難以理解的。</li>
+                                <li><em>留存策略：</em>依賴數值驗證與資源囤積。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>5. 男性氣質 vs 女性氣質 (Masculinity vs. Femininity, MAS)</h4>
+                    <p>「我們追求競爭還是生活質量？」</p>
+                    <ul>
+                        <li><strong>美國 (偏男性氣質 - MAS 62)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>追求成就、英雄主義、決斷力。</li>
+                                <li><em>設計映射：</em>「征服與對抗」。遊戲的核心往往是擊敗強大的敵人、拯救世界。排行榜是為了證明「我比你強」。</li>
+                            </ul>
+                        </li>
+                        <li><strong>中國 (高男性氣質 - MAS 66)：</strong>
+                            <ul>
+                                <li><em>心理根源：</em>同樣追求成功與地位，但更強調「被認可」。</li>
+                                <li><em>設計映射：</em>「內捲與階級」。遊戲內的社會結構往往是金字塔形的。PVP 是為了爭奪稀缺資源和服務器冠名權。<em>特殊變體：在二次元與女性向賽道（如《戀與製作人》），則表現為極致的情感供給與陪伴，填補現實社會的高壓空虛。</em></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-3">三、 用戶畫像深度對比 (Persona Comparison)</h3>
+                    
+                    <h4>1. 美國用戶：孤獨的牛仔 (The Lonely Cowboy)</h4>
+                    <ul>
+                        <li><strong>代表遊戲：</strong>《Red Dead Redemption 2》、《Skyrim》、《Fallout 4》。</li>
+                        <li><strong>核心訴求：</strong>沉浸感 (Immersion)。</li>
+                        <li><strong>行為特徵：</strong>慢節奏：願意花 10 分鐘看風景，或者在遊戲裡單純地釣魚、打獵。細節控：會因為物理引擎的 Bug 而出戲，也會因為雪地留下的腳印而感動。買斷制習慣：習慣 60/70 一次性付費，對內購（Microtransactions）極度敏感。</li>
+                        <li><strong>設計關鍵：</strong>Diegetic UI（將 UI 融入環境）、真實的物理反饋、湧現式敘事。</li>
+                    </ul>
+
+                    <h4>2. 中國用戶：焦慮的修仙者 (The Anxious Cultivator)</h4>
+                    <ul>
+                        <li><strong>代表遊戲：</strong>《原神》、《逆水寒》、《天涯明月刀》。</li>
+                        <li><strong>核心訴求：</strong>成長感 (Progression) & 陪伴感 (Companionship)。</li>
+                        <li><strong>行為特徵：</strong>效率至上：如果能傳送，絕不騎馬；如果能掃蕩，絕不手打。遊戲是獲取快感的工具，過程越短越好（除非過程本身很有趣）。數值驗證：需要清晰的戰鬥力數值（Combat Power）來量化成長。抽卡驅動：願意為「愛」（角色立繪、聲優、人設）付費，將虛擬角色視為情感伴侶。</li>
+                        <li><strong>設計關鍵：</strong>Gacha 系統、每日任務流（習慣養成）、高頻的數值反饋、二次元/古風審美。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-4">四、 設計維度的分歧與融合 (Divergence & Convergence)</h3>
+                    
+                    <h4>1. 戰鬥與成長：技巧 vs 數值</h4>
+                    <ul>
+                        <li><strong>西方模式：</strong>強調 「水平成長」（獲得新技能/工具）。就算你滿級，操作不好也會被小怪打死（如《地平線》）。</li>
+                        <li><strong>東方模式：</strong>強調 「垂直成長」（數值膨脹）。滿級後應該能秒殺小怪，體驗「割草」的快感（如《真·三國無雙》邏輯）。</li>
+                        <li><strong>融合趨勢：</strong>《原神》雖然是數值驅動，但引入了「元素反應」的技巧乘區，讓低配玩家也能通過操作通關，成功 bridging 了兩類玩家。</li>
+                    </ul>
+
+                    <h4>2. 敘事載體：環境 vs 角色</h4>
+                    <ul>
+                        <li><strong>西方模式：</strong>環境敘事 為主。主角往往是沉默的或者是玩家的化身（Avatar）。故事發生在世界中。</li>
+                        <li><strong>東方模式：</strong>角色敘事 為主。主角（旅行者）有明確的性格，且隊友（卡池角色）是敘事的核心。玩家是為了「看角色的故事」而玩遊戲。</li>
+                    </ul>
+
+                    <h4>3. UI 與引導：極簡 vs 信息流</h4>
+                    <ul>
+                        <li><strong>西方模式：</strong>去 UI 化。盡量隱藏 HUD，血條只有戰鬥時才顯示。地圖迷霧需要親自跑開。</li>
+                        <li><strong>東方模式：</strong>信息高密度。滿屏的活動按鈕、跑馬燈公告、紅點提示。這被視為「熱鬧」和「福利多」的象徵。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-5">五、 關鍵案例分析 (Critical Case Analysis)</h3>
+                    
+                    <h4>1. 《Red Dead Redemption 2》：在中國的「叫好不叫座」與效率衝突</h4>
+                    <p>《碧血狂殺 2》在西方被奉為藝術巔峰，但在中國大眾玩家群體中，通關率卻異常低迷。這背後是「擬真邏輯」與「效率邏輯」的激烈碰撞。</p>
+                    <ul>
+                        <li><strong>動畫與節奏的衝突 (Animation vs. Pacing)：</strong>
+                            <ul>
+                                <li><em>設計：</em>遊戲為了極致擬真，設計了繁瑣的動畫。搜刮一個屍體，亞瑟·摩根需要彎腰、翻找口袋、拿出物品、放入口袋，整個過程需要 3-5 秒。甚至在營地裡，為了維持「生活感」，玩家被強制禁止奔跑。</li>
+                                <li><em>西方反饋：</em>這是一種「儀式感」，它讓玩家慢下來，感受荒野的沈重與真實。每一發子彈、每一塊肉都來之不易。</li>
+                                <li><em>東方反饋：</em>這是「浪費時間」。習慣了「一鍵拾取」、「自動尋路」的中國玩家，對於這種重複性的、無意義的等待感到極度煩躁。在許多中國玩家眼中，遊戲是為了獲取多巴胺，而不是為了體驗「便秘」般的移動速度。這導致大量玩家在第一章雪山還沒走完就流失了。</li>
+                            </ul>
+                        </li>
+                        <li><strong>導航與探索的衝突 (Navigation vs. Efficiency)：</strong>
+                            <ul>
+                                <li><em>設計：</em>快速傳送點非常有限，且需要升級營地解鎖。遊戲鼓勵玩家騎馬長途跋涉，觸發隨機事件。</li>
+                                <li><em>東方反饋：</em>中國玩家傾向於「目的導向」——我要去 A 點做任務，路上的風景只是阻礙。缺乏便捷傳送被視為「強行拖時長」。</li>
+                            </ul>
+                        </li>
+                        <li><strong>啟示：</strong>如果你的目標是中國市場，必須提供「加速」選項。例如，增加「一鍵搜刮」功能，或者在二周目解鎖隨時傳送。不要試圖教育玩家去「慢下來」，因為他們的生活節奏不允許。</li>
+                    </ul>
+
+                    <h4>2. 《Genshin Impact (原神)》：文化融合的奇點與計算過的妥協</h4>
+                    <p>《原神》是少數同時征服了中美市場的產品。這不是巧合，而是一次精心計算的文化融合實驗。它在機制的「皮」與「骨」之間做了精妙的切割。</p>
+                    <ul>
+                        <li><strong>皮相 (The Skin)：東方審美與變現邏輯</strong>
+                            <ul>
+                                <li>二次元畫風：這是全球年輕一代的通用語言。</li>
+                                <li>Gacha 系統：滿足了東方玩家對「角色收集」與「數值驗證」的需求。抽卡帶來的賭博快感與角色養成帶來的陪伴感，是典型的東方商業模式。</li>
+                                <li>強引導：雖然是開放世界，但任務引導非常清晰（地面光標），降低了不確定性規避帶來的焦慮。</li>
+                            </ul>
+                        </li>
+                        <li><strong>骨相 (The Bone)：西方探索與系統化設計</strong>
+                            <ul>
+                                <li>單機體驗：遊戲本質上是一個單機開放世界 RPG，這滿足了西方玩家對「孤獨探索」和「沉浸感」的需求。沒有滿屏的滾動公告，沒有強制組隊的副本。</li>
+                                <li>元素交互：借鑒了《薩爾達》的化學引擎（火燒草、水導電），這是一種高度系統化的、湧現式的玩法，深受西方硬核玩家喜愛。</li>
+                                <li>去 PVP 化：這是最關鍵的決策。雖然引入了 Gacha（這是 P2W 的源頭），但《原神》閹割了所有 PVP 排行榜。這巧妙地規避了西方玩家對「公平性」的敏感神經——既然沒有競爭，那麼別人花錢變強就不會影響我的體驗。</li>
+                            </ul>
+                        </li>
+                        <li><strong>妥協的藝術：</strong>它犧牲了 MMO 的「熱鬧」（滿足西方），但也犧牲了單機的「敘事深度」（滿足東方對長線運營的需求）。它是一個 「最大公約數」 的產品，證明了只要核心體驗足夠紮實（探索+戰鬥），文化的隔閡是可以被機制設計所彌合的。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-6">六、 執行細節 Checklist (Execution Toolkit)</h3>
+                    <p>在進行全球化發行或特定市場定製時，請對照此表進行「文化適配度審查」。</p>
+
+                    <p><strong>工具一：效率 vs 沉浸滑桿 (The Efficiency-Immersion Slider)</strong></p>
+                    <p>針對不同市場調整以下參數：</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>機制</th>
+                                    <th>美國市場 (Immersion First)</th>
+                                    <th>中國市場 (Efficiency First)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>搜刮資源</td>
+                                    <td>播放拾取動畫，物品有物理碰撞</td>
+                                    <td>一鍵拾取，光球飛入背包</td>
+                                </tr>
+                                <tr>
+                                    <td>快速傳送</td>
+                                    <td>需解鎖，且有限制（如篝火旁）</td>
+                                    <td>隨時隨地，地圖點擊即傳</td>
+                                </tr>
+                                <tr>
+                                    <td>任務尋路</td>
+                                    <td>指南針方向提示，或無提示</td>
+                                    <td>地面光標指引，甚至自動尋路</td>
+                                </tr>
+                                <tr>
+                                    <td>NPC 對話</td>
+                                    <td>站樁演出，不可跳過</td>
+                                    <td>點擊屏幕快速顯示全文本，可跳過</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p><strong>工具二：社交壓力測試 (Social Pressure Audit)</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>🔲 <strong>排行榜設計：</strong>
+                            <ul>
+                                <li>CN：全服戰力榜、富豪榜（激發大 R 虛榮心）。</li>
+                                <li>US：僅好友榜，或基於特定成就的榜單（避免 P2W 負面情緒）。</li>
+                            </ul>
+                        </li>
+                        <li>🔲 <strong>多人模式：</strong>
+                            <ul>
+                                <li>CN：強調「帶妹」、「師徒」、「公會福利」（強社交）。</li>
+                                <li>US：強調「合作挑戰」、「不強制社交」（弱社交）。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>工具三：付費感知審查 (Monetization Perception Check)</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>🔲 <strong>P2W 檢測：</strong>付費道具是否直接影響 PvP 平衡？如果是，在歐美市場會被差評轟炸（Review Bombing）。</li>
+                        <li>🔲 <strong>扭蛋機制：</strong>是否有保底（Pity System）？是否公開概率？這在亞洲是法規，在歐美是道德底線。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-7">結語：理解差異，而非消除差異</h3>
+                    <aside class="note-box">
+                        <p>中美玩家的差異不是「先進」與「落後」的差異，而是不同文化土壤長出的不同果實。</p>
+                        <ul>
+                            <li>對於美國玩家，開放世界是一場 <strong>「向外的探險」</strong>，去征服未知的荒野。</li>
+                            <li>對於中國玩家，開放世界是一場 <strong>「向內的修煉」</strong>，去在江湖中確立自己的地位。</li>
+                        </ul>
+                        <p>偉大的產品（如《原神》、《Elden Ring》）不是消除了這些差異，而是找到了某種通用的底層語言（如「美的追求」或「挑戰的快感」），在差異之上架起了橋樑。</p>
+                    </aside>
+                </section>
+
+            </article>
+
+            <hr class="section-divider">
+
+            <nav class="chapter-nav">
+                <a href="s6.html" class="nav-btn prev-chapter">
+                    <span class="label">上一章</span>
+                    <span class="title">section 06</span>
+                </a>
+                <a href="s8.html" class="nav-btn next-chapter">
+                    <span class="label">下一章</span>
+                    <span class="title">section 08</span>
+                </a>
+            </nav>
+
+        </main>
+
+        <aside class="toc-sidebar">
+            <div class="toc-sticky-container">
+                <a href="index.html" class="back-to-catalog-link">
+                    <span class="arrow">←</span> 回到目錄
+                </a>
+                <hr class="toc-divider">
+                <span class="toc-header">本章索引</span>
+                <nav class="toc-list">
+                    <a href="#section-1" class="toc-link">一、核心衝突</a>
+                    <a href="#section-2" class="toc-link">二、理論基石：Hofstede 文化維度</a>
+                    <a href="#section-3" class="toc-link">三、用戶畫像深度對比</a>
+                    <a href="#section-4" class="toc-link">四、設計維度的分歧與融合</a>
+                    <a href="#section-5" class="toc-link">五、關鍵案例分析</a>
+                    <a href="#section-6" class="toc-link">六、執行細節 Checklist</a>
+                    <a href="#section-7" class="toc-link">結語：理解差異</a>
+                </nav>
+            </div>
+        </aside>
+
+        <footer class="catalog-footer">
+            本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
+            內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
