@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲研發與發行全書 - 第八章：用戶分層與差異化訴求</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="index.html" class="floating-home-btn" title="回到目錄">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="chapter-banner">
+        <div class="banner-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?q=80&w=2070&auto=format&fit=crop"
+            alt="Otaku Culture Banner">
+        <div class="banner-title">
+            <span class="chapter-number">section 08</span>
+            <h1>用戶分層與差異化訴求</h1>
+            <h2>User Stratification: The Hierarchy of Otaku Tribes</h2>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+
+        <main class="book-container">
+            <article class="chapter-content">
+
+                <div class="epigraph">
+                    <blockquote>
+                        「不要試圖討好所有人。在二次元圈子裡，『大眾化』往往等同於『平庸』。你必須先征服金字塔頂端的『婆羅門』，才能通過他們的口碑輻射到底層的『泛用戶』。這是一個從上至下的滴落過程。」
+                    </blockquote>
+                </div>
+
+                <section class="book-section">
+                    <h3 id="intro-vol3">第三部導論：將「愛」量化為 GDP</h3>
+                    <p class="first-paragraph">
+                        「在二次元的世界裡，玩家不為『強度』買單，他們為『老婆』買單。但你必須明白，讓他們喊出『老婆』這兩個字，需要多麼精密的工業化鋪墊。這不是感性的衝動，這是理性的收割。」
+                    </p>
+                    <p>
+                        二次元遊戲（ACGN Games）是當今遊戲市場中最特殊、利潤率最高、也是護城河最深的品類。它的核心商業邏輯與傳統遊戲截然不同，甚至可以說是在運行一套完全平行的物理法則：
+                    </p>
+                    <ul>
+                        <li><strong>傳統遊戲（功能性付費）：</strong>我付錢是因為這把槍能幫我殺更多人，這件裝備能讓我數值更高。這是一種「工具理性」的交易。</li>
+                        <li><strong>二次元遊戲（情感性付費）：</strong>我付錢是因為我不想讓她在卡池裡受凍，我想給她一個家；我抽滿命座（最高突破等級）不是為了強度，而是為了證明我對她的愛（廚力放出）。這是一種「價值理性」的獻祭。</li>
+                    </ul>
+                    <p>
+                        第三部旨在解析這套「愛的經濟學」是如何運作的。這不是關於如何畫出好看的皮囊，而是關於如何注入靈魂。
+                    </p>
+                    <ul>
+                        <li><strong>用戶分層（第八章）：</strong>誰是我們的衣食父母？誰是我們的輿論領袖？為什麼得罪了佔比僅 5% 的核心玩家會導致遊戲暴死？</li>
+                        <li><strong>抽卡心理（第九章）：</strong>如何設計一個讓玩家心甘情願掏錢的斯金納箱？概率學背後的心理博弈是什麼？</li>
+                        <li><strong>內容營銷（第十章）：</strong>如何構建一個跨媒體的 IP 宇宙？讓角色活在遊戲之外。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-1">一、 核心挑戰：傳統畫像的失效與「部落主義」的興起</h3>
+                    <p>
+                        在二次元賽道，傳統的市場營銷畫像（如「18-25歲，男性，一線城市，大學生」）幾乎完全失效。這種顆粒度太粗，無法解釋用戶的行為動機。
+                        一個 35 歲的金融高管和一個 15 歲的中學生，可能在「對雷姆的愛」上是完全一致的，甚至那個中學生比高管更懂角色的設定細節。他們共享同一套語言體系（梗/Meme）、同一套價值觀（萌即正義/顏值即正義）和同一套排斥機制（現充爆炸/拒絕三次元）。
+                    </p>
+                    <p>
+                        因此，我們必須引入一套基於 <strong>「二次元濃度 (Otaku Concentration)」</strong> 與 <strong>「社群權力 (Community Power)」</strong> 的新分層模型。這是一個充滿了階級、鄙視鏈與 <strong>部落主義 (Tribalism)</strong> 的權力結構。在這個結構中，話語權與付費能力往往是不對等的，這構成了運營的最大難題。
+                    </p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-2">二、 理論基石：社群權力結構與鄙視鏈</h3>
+                    <p>
+                        二次元社群不是扁平的，它是一個嚴酷的金字塔。每一層用戶都有其獨特的心理特徵與戰略價值。
+                    </p>
+
+                    <h4>1. 核心層：婆羅門 (The Brahmins / Hardcore) —— 佔比 5%，聲量 80%</h4>
+                    <ul>
+                        <li><strong>定義：</strong>資深宅，閱片無數，對業界動態如數家珍。他們是「考據黨」、「作畫廚」、「聲優控」、「設定狂」。他們可能玩過上百款二次元遊戲，對於「什麼是好的二次元」有絕對的定義權。</li>
+                        <li><strong>心理特徵：</strong>
+                            <ul>
+                                <li><strong>鑑賞力極高 (Connoisseurship)：</strong>一眼就能看出立繪的人體結構錯誤、透視問題，或劇情的邏輯漏洞、世界觀的吃書（Retcon）。他們是免費的、但最嚴苛的 QA。</li>
+                                <li><strong>排他性 (Gatekeeping)：</strong>傾向於守護圈子的純潔性，看不起「跟風黨」和「雲玩家」。他們發明術語和黑話，以此築起高牆。</li>
+                                <li><strong>意見領袖 (KOL)：</strong>他們撰寫 Wiki 百科、製作長達 40 分鐘的劇情解析視頻、在論壇發布萬字評測。他們掌握了輿論的風向標。</li>
+                            </ul>
+                        </li>
+                        <li><strong>訴求：「尊嚴」與「深度」。</strong>他們不一定是大 R（鯨魚用戶），但他們需要被官方當作「懂行的人」來對待。任何對 Lore（設定）的敷衍或對角色的 OOC（Out of Character，性格崩壞），都會被他們視為對 IP 的褻瀆，從而引發聖戰。</li>
+                    </ul>
+
+                    <h4>2. 中堅層：老獵人 (The Enthusiasts / Whales) —— 佔比 20%，營收 60%</h4>
+                    <ul>
+                        <li><strong>定義：</strong>有穩定收入和時間的愛好者。他們可能沒那麼硬核（不去研究傷害公式），但對 IP 有極高的忠誠度。他們是維持遊戲運轉的經濟支柱。</li>
+                        <li><strong>心理特徵：</strong>
+                            <ul>
+                                <li><strong>為愛付費 (Pay for Love)：</strong>只要角色「對味」（XP 系統匹配，戳中性癖），就會毫不猶豫地課金，甚至滿命滿精（最高配置）。他們將角色視為 「本命」。</li>
+                                <li><strong>社群跟隨：</strong>會參考「婆羅門」的強度測評，但最終決策取決於角色的美型度和人設。他們不產出硬核內容，但會產出大量的「發情」言論和同人圖約稿。</li>
+                            </ul>
+                        </li>
+                        <li><strong>訴求：「陪伴」與「反饋」。</strong>他們需要穩定的內容更新（不想長草），以及能在社群中曬出的「老婆/老公」。他們需要遊戲提供足夠的 <strong>「廚力放出」</strong> 空間（如角色展示櫃、誓約系統）。</li>
+                    </ul>
+
+                    <h4>3. 外圍層：觀光客 (The Tourists / Casuals) —— 佔比 75%，流動性極高</h4>
+                    <ul>
+                        <li><strong>定義：</strong>泛二次元用戶，因抖音/B站的熱門視頻、聯動活動或朋友安利而入坑。他們對 ACG 文化了解不深。</li>
+                        <li><strong>心理特徵：</strong>
+                            <ul>
+                                <li><strong>跟風與 FOMO：</strong>什麼火玩什麼。對 IP 沒有執念，隨時可能流失到下一個爆款。他們玩遊戲是為了「有談資」。</li>
+                                <li><strong>數值敏感：</strong>更在意「強不強」，而不是「萌不萌」。他們會問「這個角色 T0 嗎？」，如果不是就不抽。</li>
+                            </ul>
+                        </li>
+                        <li><strong>訴求：「爽快」與「社交」。</strong>他們需要低門檻的玩法、自動戰鬥、掃蕩功能，以及可以融入大眾的話題。他們是遊戲的 DAU（日活躍用戶）基數，決定了遊戲的「熱度」。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-3">三、 差異化設計策略：如何同時討好這三群人？</h3>
+                    <p>這是一個走鋼索的過程。如果太硬核，嚇跑觀光客；如果太媚俗，得罪婆羅門。解決方案是 <strong>「分層滿足 (Layered Satisfaction)」</strong>，將遊戲切分為不同的切片賣給不同的人。</p>
+
+                    <h4>1. 針對核心層（婆羅門）：做深「皮相」與「骨相」</h4>
+                    <ul>
+                        <li><strong>世界觀的邏輯自洽：</strong>不要只寫故事，要寫歷史。甚至要為遊戲發明一門語言（如《原神》的坎瑞亞語、《魔塔大陸》的Hymmnos語）。這種「過剩的細節」是婆羅門的最愛，他們會免費為你做 30 分鐘的考據視頻，這就是最好的內容營銷。</li>
+                        <li><strong>高難度的挑戰（可選）：</strong>提供「危機合約」（明日方舟）式的高難副本，不給數值獎勵（避免逼退休閒玩家），只給 <strong>榮譽勳章</strong> 或 <strong>限定頭像框</strong>。這是給他們展示技術和理解深度的舞台。</li>
+                    </ul>
+
+                    <h4>2. 針對中堅層（老獵人）：做足「情感交互」</h4>
+                    <ul>
+                        <li><strong>角色個人劇情 (Character Stories)：</strong>每個角色必須有專屬的支線、語音和互動。例如《碧藍航線》的誓約系統，或者《蔚藍檔案》的 Momotalk（模擬手機聊天）。這是在建立 <strong>「準社會關係 (Parasocial Relationship)」</strong>。</li>
+                        <li><strong>Live2D 與美術細節：</strong>衣服的材質、眼神的流轉、點擊特定部位時的嬌羞反應（甚至要有好感度分級）。這是他們願意付費的直接原因——他們買的不是一張卡片，而是一個會動的、會回應他們的靈魂。</li>
+                    </ul>
+
+                    <h4>3. 針對外圍層（觀光客）：做低「准入門檻」</h4>
+                    <ul>
+                        <li><strong>減負設計 (QoL Improvements)：</strong>自動戰鬥、一鍵掃蕩、裝備一鍵強化。讓他們能輕鬆獲取資源，不被硬核玩法勸退。他們的挫敗感閾值很低。</li>
+                        <li><strong>梗文化營銷 (Memetic Marketing)：</strong>官方造梗（如《原神》的「應急食品」），降低傳播的認知門檻，讓圈外人也能看懂並轉發。製作高品質的 MMD 模型並免費發放，鼓勵二創，讓觀光客在刷短視頻時被動入坑。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-4">四、 關鍵案例分析 (Critical Case Analysis)</h3>
+                    <p>本節將深度解構兩款現象級產品，分析它們如何通過精準定位「婆羅門」與「老獵人」的痛點，從而在紅海中殺出血路。同時，我們將引入一個反面教材，展示忽視用戶分層的代價。</p>
+
+                    <h4>1. 《Arknights (明日方舟)》：用「高冷」與「智力門檻」征服婆羅門</h4>
+                    <p>在萌系當道、色彩鮮豔的 2019 年，明日方舟選擇了一條極度反直覺的路：性冷淡風 (Tech-Wear) 與 謎語人敘事。</p>
+                    <ul>
+                        <li><strong>視覺識別 (Visual Identity) —— 審美隔離策略：</strong>放棄了當時主流的「媚宅」大胸長腿，採用了包得嚴嚴實實的機能風（Tech-Wear）與黑白灰主色調。UI 設計極度扁平化、工業化。
+                            <ul>
+                                <li><em>心理效應：</em>這不僅是美術風格的選擇，更是一種 <strong>「審美篩選器」</strong>。它直接過濾掉了只看「福利」的低質量用戶，吸引了追求「高級感」、「逼格」的核心玩家（婆羅門）。對於這群人來說，玩明日方舟是一種身分標籤，代表了自己脫離了低級趣味。</li>
+                            </ul>
+                        </li>
+                        <li><strong>敘事濾網 (Narrative Filter) —— 智力傲慢策略：</strong>劇情充滿了政治隱喻、哲學思考和碎片化信息，甚至被詬病為「不說人話」。
+                            <ul>
+                                <li><em>心理效應：</em>這種高門檻反而激發了「舟學家」的解讀熱情。看不懂劇情不再是缺點，反而成了 <strong>「智力挑戰」</strong>。玩家為了看懂劇情，自發去研究泰拉大陸的地理、源石病的病理學、各國勢力的原型。這種高投入的認知成本，構建了極其堅固的社區護城河。</li>
+                            </ul>
+                        </li>
+                        <li><strong>玩法分層 (Gameplay Stratification) —— 危機合約機制：</strong>普通關卡可以「抄作業」（看攻略），保證觀光客能過。但「危機合約」的高層挑戰（Risk 18+）難度極高，且 <strong>幾乎沒有實質獎勵（只有榮譽）</strong>。
+                            <ul>
+                                <li><em>目的：</em>這是專門為婆羅門搭建的舞台。在這裡，他們可以展示極致的操作和理解，獲得社區的膜拜。這種「非數值驅動」的榮耀感，是硬核二次元玩家的最高追求。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>2. 《Blue Archive (蔚藍檔案)》：極致的「情緒供給」與「擬真親密」</h4>
+                    <p>如果明日方舟是「酷」，蔚藍檔案就是「甜」。它在韓國和日本市場的成功，證明了 <strong>「情緒價值」</strong> 可以被工業化量產。</p>
+                    <ul>
+                        <li><strong>定位差異 —— 清透與青春策略：</strong>在充斥著「黑深殘」（黑暗、深刻、殘酷）的市場中，它反其道而行，主打 <strong>「清透、明亮、青春 (Blue & Youth)」</strong>。槍械只是裝飾，核心是校園日常。
+                            <ul>
+                                <li><em>心理效應：</em>它成為了現代高壓社會的 <strong>「精神避難所」</strong>。玩家不需要拯救世界，只需要和學生們度過愉快的每一天。</li>
+                            </ul>
+                        </li>
+                        <li><strong>關係構建 —— 絕對的中心策略：</strong>玩家扮演的「老師」是遊戲中唯一的成年人男性（通常暗示）。所有學生（角色）都無條件地信任、依賴甚至愛慕老師。即使學生犯錯，老師也是「負責任的大人」，給予引導而非責罰。
+                            <ul>
+                                <li><em>心理效應：</em>這精準擊中了現代男性的軟肋——渴望被無條件接納與被需要。在現實中這是一種稀缺資源，但在遊戲裡只要付費就能獲得。</li>
+                            </ul>
+                        </li>
+                        <li><strong>Momotalk 系統 —— 打破第四面牆機制：</strong>遊戲內置了一個模仿 Line/微信的聊天軟件。學生會主動發消息給老師，約老師出來，或者分享日常照片。
+                            <ul>
+                                <li><em>心理效應：</em>這極大增強了 <strong>「真實感 (Verisimilitude)」</strong>。玩家感覺這些角色不是存在於戰鬥關卡中，而是存在於自己的手機通訊錄裡。每一次收到 Momotalk 的紅點提示，都是一次多巴胺的分泌，強化了與角色的私密連結。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>3. 【反面教材】《解神者 (X2)》：NTR 事件與社群崩塌</h4>
+                    <p>這是一個慘痛的教訓，展示了忽視「核心層（婆羅門）」訴求會如何瞬間毀掉一款投資數千萬的產品。</p>
+                    <ul>
+                        <li><strong>事件：</strong>在測試期間，玩家發現遊戲中的女主角（玩家的「後宮」預備役）與一名叫「少昊」的男性 NPC 有著極其曖昧、甚至超越了與主角關係的互動（不僅是言語，還有舔舐傷口等親密行為）。主角在劇情中甚至淪為了他們的「舔狗」（僕人）。</li>
+                        <li><strong>後果：</strong>這觸犯了二次元 ML (Master Love) 玩家的絕對禁忌——<strong>NTR (被戴綠帽)</strong>。
+                            <ul>
+                                <li><em>婆羅門暴怒：</em>核心玩家感覺受到了背叛和羞辱。他們在社群中發起了毁滅性的攻擊，製作了大量的諷刺梗圖（「少昊哥哥」）。</li>
+                                <li><em>口碑雪崩：</em>這種憤怒迅速傳染給了中堅層和外圍層。雖然玩法本身質量尚可，但「綠帽遊戲」的標籤一旦貼上，就再也洗不清了。</li>
+                            </ul>
+                        </li>
+                        <li><strong>教訓：</strong>在二次元遊戲中，玩家的情感潔癖是不容挑戰的。你不能一邊賺玩家把角色當老婆的錢，一邊在劇情裡把角色送給別的男人。這是商業道德的底線。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-5">五、 執行細節 Checklist (Execution Toolkit)</h3>
+                    <p>為了確保社群生態的健康，請定期進行以下審計。這不僅是數據監控，更是對「信仰」的體檢。</p>
+
+                    <p><strong>工具一：用戶成分審計表 (User Composition Audit)</strong></p>
+                    <p>在社群運營中，定期監測不同層級用戶的健康度，就像監測生態系統一樣，任何一層的崩塌都會導致生態滅絕：</p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>🔲 <strong>婆羅門指標 (The Depth Metric)：</strong>
+                            <ul>
+                                <li><em>觀測點：</em>本週有多少高質量的考據文、手書動畫、深度數值攻略產出？</li>
+                                <li><em>基準線：</em>如果此類內容歸零，或者被「只有表情包的水貼」淹沒，說明遊戲失去了深度，正在走向快餐化。這意味著遊戲失去了「靈魂」。</li>
+                                <li><em>行動：</em>官方應主動「投餵」設定集素材，或者舉辦「硬核攻略大賽」來激活這一人群。</li>
+                            </ul>
+                        </li>
+                        <li>🔲 <strong>老獵人指標 (The Love Metric)：</strong>
+                            <ul>
+                                <li><em>觀測點：</em>卡池流水的分布是否健康？是否有人為「強度弱但立繪美」的角色買單？</li>
+                                <li><em>基準線：</em>如果流水只集中在 T0 強度角色，說明玩家是在「為贏付費」而非「為愛付費」，這是二次元遊戲衰退的信號。</li>
+                                <li><em>行動：</em>推出角色的專屬皮膚、個人劇情或 ASMR 語音，強化情感鏈接。</li>
+                            </ul>
+                        </li>
+                        <li>🔲 <strong>觀光客指標 (The Buzz Metric)：</strong>
+                            <ul>
+                                <li><em>觀測點：</em>新手引導的通過率是多少？B站/抖音相關視頻的播放量趨勢如何？</li>
+                                <li><em>基準線：</em>這代表了流量池的大小。如果新增暴跌，說明遊戲失去了破圈能力。</li>
+                                <li><em>行動：</em>優化新手流程（FTUE），與大眾品牌聯動（如肯德基、必勝客），製造社會性話題。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p><strong>工具二：輿論風險預警 (Sentiment Risk Check)</strong></p>
+                    <p>二次元社群極易「炎上」（大規模負面輿論），其烈度遠超傳統遊戲。這通常源於觸犯了核心層的逆鱗（信仰崩塌）。必須建立紅線機制：</p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>🔲 <strong>CP 檢測 (The NTR Check)：</strong>
+                            <ul>
+                                <li><em>紅線：</em>是否在沒有鋪墊的情況下，強行給女角色安排了男性伴侶？或者展現了與玩家之外男性的親密互動？</li>
+                                <li><em>後果：</em>這在 ML (Master Love) 向遊戲中是絕對死罪，會導致核心玩家瞬間崩潰流失（NTR 創傷），甚至引發退款潮。</li>
+                                <li><em>預防：</em>嚴格審查所有文案和語音，確保角色的情感箭頭指向玩家，或者保持絕對的中立。</li>
+                            </ul>
+                        </li>
+                        <li>🔲 <strong>和諧檢測 (Censorship Check)：</strong>
+                            <ul>
+                                <li><em>紅線：</em>是否為了過審而暗改了立繪的露膚度，且沒有告知玩家？</li>
+                                <li><em>後果：</em>這被視為對消費者的背叛與欺詐。玩家付費是為了「原版」的美，任何閹割都是對商品價值的破壞。</li>
+                                <li><em>預防：</em>如果必須修改，請提供補償（如皮膚券），並誠懇道歉，甚至暗示這是「不可抗力」。</li>
+                            </ul>
+                        </li>
+                        <li>🔲 <strong>強度欺詐 (Nerf Check)：</strong>
+                            <ul>
+                                <li><em>紅線：</em>是否在 PV 中展示的效果與實機不符？或者在角色上線後進行了暗削（Nerf）？</li>
+                                <li><em>後果：</em>這會摧毀玩家對數值系統的信任。玩家會認為官方在「詐騙」。</li>
+                                <li><em>預防：</em>所有改動必須有詳細的公告（Patch Notes），如果是削弱，必須提供補償或回退機制。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-6">結語：愛的供需關係</h3>
+                    <aside class="note-box">
+                        <p>在二次元遊戲中，研發商是 <strong>「造夢者」</strong>，玩家是 <strong>「信徒」</strong>。 用戶分層的本質，是理解不同信徒的虔誠度與需求，並建立一個穩定的「信仰供需系統」。</p>
+                        <ul>
+                            <li>對於婆羅門，你要給他們 <strong>「神學（設定與深度）」</strong>，讓他們有經文可念，有理可據地傳教。</li>
+                            <li>對於老獵人，你要給他們 <strong>「神像（角色與交互）」</strong>，讓他們有實體可拜，有情感可寄託。</li>
+                            <li>對於觀光客，你要給他們 <strong>「廟會（熱鬧與福利）」</strong>，讓他們有熱鬧可看，有便宜可佔。</li>
+                        </ul>
+                        <p>只有同時滿足這三者，你的神殿（IP）才能香火鼎盛，經久不衰。這就是將「愛」轉化為 GDP 的終極奧義。</p>
+                    </aside>
+                </section>
+
+            </article>
+
+            <hr class="section-divider">
+
+            <nav class="chapter-nav">
+                <a href="s7.html" class="nav-btn prev-chapter">
+                    <span class="label">上一章</span>
+                    <span class="title">section 07</span>
+                </a>
+                <a href="s9.html" class="nav-btn next-chapter">
+                    <span class="label">下一章</span>
+                    <span class="title">section 09</span>
+                </a>
+            </nav>
+
+        </main>
+
+        <aside class="toc-sidebar">
+            <div class="toc-sticky-container">
+                <a href="index.html" class="back-to-catalog-link">
+                    <span class="arrow">←</span> 回到目錄
+                </a>
+                <hr class="toc-divider">
+                <span class="toc-header">本章索引</span>
+                <nav class="toc-list">
+                    <a href="#intro-vol3" class="toc-link">導論：將「愛」量化為 GDP</a>
+                    <a href="#section-1" class="toc-link">一、核心挑戰：部落主義的興起</a>
+                    <a href="#section-2" class="toc-link">二、理論基石：社群權力結構</a>
+                    <a href="#section-3" class="toc-link">三、差異化設計策略</a>
+                    <a href="#section-4" class="toc-link">四、關鍵案例分析</a>
+                    <a href="#section-5" class="toc-link">五、執行細節 Checklist</a>
+                    <a href="#section-6" class="toc-link">結語：愛的供需關係</a>
+                </nav>
+            </div>
+        </aside>
+
+        <footer class="catalog-footer">
+            本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
+            內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
