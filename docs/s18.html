@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲研發與發行全書 - 第十八章：概念設計模型</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <a href="index.html" class="floating-home-btn" title="回到目錄">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </a>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <header class="chapter-banner">
+        <div class="banner-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=2550&auto=format&fit=crop"
+            alt="Character Design Banner">
+        <div class="banner-title">
+            <span class="chapter-number">section 18</span>
+            <h1>概念設計模型</h1>
+            <h2>Conceptual Design Models: From Archetypes to Icons</h2>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+
+        <main class="book-container">
+            <article class="chapter-content">
+
+                <div class="epigraph">
+                    <blockquote>
+                        「角色不是畫出來的，是『長』出來的。一個偉大的角色設計，應該能讓玩家在看到剪影的第一秒就認出他，在聽到第一句台詞時就理解他，在得知他的過去後愛上他。角色是玩家進入世界的化身，也是玩家情感投射的容器。」
+                        <cite>—— 頂級角色概念設計師</cite>
+                    </blockquote>
+                </div>
+
+                <section class="book-section">
+                    <h3 id="section-1">一、 核心命題：如何讓角色「一眼入魂」？</h3>
+                    <p class="first-paragraph">
+                        在信息爆炸的時代，玩家的注意力是極度稀缺的資源。當玩家在應用商店瀏覽截圖，或者在社交媒體上滑過一張立繪時，你只有 <strong>3 秒</strong> 的時間來抓住他們的眼球並植入記憶。
+                    </p>
+                    <ul>
+                        <li><strong>第 1 秒：本能層 (Visceral) —— 看臉和身材。</strong>這是生物學的篩選，判斷是否有性吸引力（Mate）或威脅性（Threat）。</li>
+                        <li><strong>第 2 秒：敘事層 (Narrative) —— 看衣服和裝備。</strong>這是社會學的篩選，判斷角色的職業、陣營與社會地位。</li>
+                        <li><strong>第 3 秒：性格層 (Personality) —— 看動作和表情。</strong>這是心理學的篩選，判斷角色的性格傾向（攻擊性、內向、瘋狂）。</li>
+                    </ul>
+                    <p>
+                        如果在 3 秒內，玩家無法給這個角色貼上一個明確的 <strong>「標籤 (Tag)」</strong>，這個角色就失敗了。本章將提出一個 <strong>「本能 -> 原型 -> 反差」</strong> 的三層設計模型，幫助開發者設計出既具備 「強辨識度」 又具備 「深層魅力」 的角色。
+                    </p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-2">二、 第一層：本能層 —— 生物學的誘惑 (Biological Instinct)</h3>
+                    <p>這是最底層的吸引力，直接作用於大腦的邊緣系統（爬蟲腦）。它不講邏輯，只講本能。</p>
+
+                    <h4>1. 娃娃臉效應 (Kindchenschema / Baby Schema)</h4>
+                    <ul>
+                        <li><strong>原理：</strong>人類對具備「嬰兒特徵」（大眼睛、大頭身比）的生物會本能地產生憐愛。</li>
+                        <li><strong>應用：</strong>二次元「萌系」角色的核心。大眼睛暗示「我沒有威脅」，降低防禦心理。</li>
+                    </ul>
+
+                    <h4>2. 超常刺激 (Supernormal Stimulus)</h4>
+                    <ul>
+                        <li><strong>原理：</strong>動物會對「誇張的信號」產生比真實信號更強烈的反應。</li>
+                        <li><strong>應用：</strong>性特徵的誇張（曲線/肌肉）與武器裝備的誇張（巨劍/巨炮）。纖細少女揮舞重錘，這種 <strong>「力量感的錯置」</strong> 是一種極致的超常刺激。</li>
+                    </ul>
+
+                    <h4>3. 危險信號與警告色 (Aposematism)</h4>
+                    <ul>
+                        <li><strong>原理：</strong>鮮豔顏色（紅/黃/黑）與尖銳形狀（牙齒/刺）代表攻擊性。</li>
+                        <li><strong>應用：</strong>反派設計常使用尖銳三角形構圖。給予角色危險特徵（如《毒液》的牙齒）會讓玩家產生「敬畏感」。</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-3">二、 第二層：原型層 —— 榮格與集體潛意識 (Jungian Archetypes)</h3>
+                    <p>當玩家被本能吸引後，我們需要利用 <strong>「集體潛意識」</strong> 快速建立認知。榮格認為，人類共有一些跨文化的原型，我們不需要解釋，一看就懂。</p>
+
+                    <h4>1. 經典原型的遊戲化映射 (The 12 Archetypes)</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>原型</th>
+                                    <th>核心動機</th>
+                                    <th>恐懼</th>
+                                    <th>遊戲角色映射案例</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>英雄 (The Hero)</td>
+                                    <td>證明價值</td>
+                                    <td>軟弱</td>
+                                    <td>Link (薩爾達), 鳴人</td>
+                                </tr>
+                                <tr>
+                                    <td>智者 (The Sage)</td>
+                                    <td>尋求真理</td>
+                                    <td>被欺騙</td>
+                                    <td>鍾離 (原神), Gandalf</td>
+                                </tr>
+                                <tr>
+                                    <td>陰影 (The Shadow)</td>
+                                    <td>隱藏慾望</td>
+                                    <td>暴露</td>
+                                    <td>死侍, Kratos</td>
+                                </tr>
+                                <tr>
+                                    <td>阿尼瑪 (The Lover)</td>
+                                    <td>親密關係</td>
+                                    <td>孤獨</td>
+                                    <td>Aerith (FF7), 2B</td>
+                                </tr>
+                                <tr>
+                                    <td>弄臣 (The Jester)</td>
+                                    <td>享受當下</td>
+                                    <td>無聊</td>
+                                    <td>Paimon (原神), Claptrap</td>
+                                </tr>
+                                <tr>
+                                    <td>統治者 (The Ruler)</td>
+                                    <td>控制混亂</td>
+                                    <td>混亂</td>
+                                    <td>艾爾海森, 阿爾薩斯</td>
+                                </tr>
+                                <tr>
+                                    <td>照顧者 (The Caregiver)</td>
+                                    <td>服務他人</td>
+                                    <td>自私</td>
+                                    <td>Mercy (OW), 姬子</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4>2. 刻板印象的戰略價值</h4>
+                    <p>刻板印象是 <strong>「認知的捷徑」</strong>。看到雙馬尾就知道是傲嬌，看到眼鏡就知道是腹黑。這讓玩家能迅速建立預期。策略是「始於原型，終於反差」。</p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-4">四、 第三層：反差層 —— 靈魂的誕生 (The Twist & Gap Moe)</h3>
+                    <p>只有原型是不夠的。要讓角色變成「活人」，必須引入 <strong>「反差 (Gap Moe)」</strong>。</p>
+
+                    <h4>1. 反差萌公式 (The Gap Formula)</h4>
+                    <p><strong>公式：強烈的外在標籤 (A) + 意外的內在矛盾 (Not A) = 靈魂</strong></p>
+                    <ul>
+                        <li><strong>案例 A：雷電將軍 (Raiden Shogun)：</strong>
+                            <ul>
+                                <li><em>外在：</em>高冷無情的雷神。</li>
+                                <li><em>內在：</em>不會做飯的宅女，喜歡甜點。</li>
+                                <li><em>效果：</em>玩家從「敬畏」變成「憐愛」。</li>
+                            </ul>
+                        </li>
+                        <li><strong>案例 B：Kratos (新戰神)：</strong>
+                            <ul>
+                                <li><em>外在：</em>殘暴的斯巴達戰神。</li>
+                                <li><em>內在：</em>笨拙但深沈的老父親，害怕兒子重蹈覆轍。</li>
+                                <li><em>效果：</em>從暴力符號變成深刻的角色。</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h4>2. 缺陷設計 (Flaw Design)</h4>
+                    <p>完美的角色是無聊的。必須給角色設計一個 <strong>「致命缺陷 (Fatal Flaw)」</strong>（如瞎眼、斷臂、社恐）。缺陷讓角色變得 <strong>「脆弱」</strong>，而脆弱感是引發玩家 <strong>「共情」</strong> 的唯一途徑。</p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-5">五、 關鍵案例分析 (Critical Case Analysis)</h3>
+                    
+                    <h4>1. 《Overwatch (鬥陣特攻)》：功能美學與形狀語言的勝利</h4>
+                    <p>暴雪的角色設計是「功能性」與「敘事性」結合的巔峰。利用 <strong>形狀語言</strong>（圓形=肉盾，方形=堅固，三角形=敏捷）和 <strong>剪影測試</strong> 確保辨識度。聲音設計（腳步聲、大招語音）也是角色靈魂的一部分。</p>
+
+                    <h4>2. 《Persona 5 (女神異聞錄 5)》：反叛符號學與人格面具</h4>
+                    <p>P5 將榮格心理學具象化。日常的校服象徵壓抑，怪盜服象徵釋放。Joker 的燕尾服、Ryuji 的骷髏面具、Ann 的紅色緊身衣，都是 <strong>「反叛符號學」</strong> 的體現。覺醒儀式中「撕下面具」的痛感傳達了「做自己需要付出代價」的主題。</p>
+
+                    <h4>3. 《League of Legends: Jinx (金克絲)》：從瘋狂符號到悲劇內核</h4>
+                    <p>《雙城之戰》補完了金克絲。視覺上的不對稱（長髮、單袖）和病態特徵（蒼白、瘦削）暗示了精神的不穩定。敘事揭示了她瘋狂背後的創傷（被遺棄、愧疚）。這種反差讓玩家原諒了她的破壞，達成了 <strong>「反派共情」</strong>。</p>
+
+                    <h4>4. 《God of War (戰神)》：Kratos 的神性重構</h4>
+                    <p>從舊 Kratos 的「復仇與憤怒」轉變為新 Kratos 的「克制與責任」。大鬍子和利維坦之斧象徵了成熟與守護。他依然強大，但現在「害怕」自己的力量。這是一次教科書級別的 IP 重啟。</p>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-6">六、 執行細節 Checklist (Execution Toolkit)</h3>
+                    
+                    <p><strong>工具一：角色設計三視圖審計 (The Three-View Audit)</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>🔲 <strong>剪影清晰度：</strong>在黑白模式下，是否能一眼認出？是否有獨特的突出物？</li>
+                        <li>🔲 <strong>色彩識別度：</strong>主色調是否超過 3 種？（60-30-10 法則）。是否與其他角色撞色？</li>
+                        <li>🔲 <strong>細節層級 (LOD)：</strong>上半身的細節密度是否高於下半身？（對話框主要看上半身）。</li>
+                    </ul>
+
+                    <p><strong>工具二：靈魂拷問清單 (The Soul Questionnaire)</strong></p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>🔲 <strong>慾望 (Want)：</strong>他表面上想要什麼？（例：金錢、權力）。</li>
+                        <li>🔲 <strong>需求 (Need)：</strong>他實際上需要什麼？（例：家庭的溫暖、自我接納）。</li>
+                        <li>🔲 <strong>恐懼 (Fear)：</strong>他最怕失去什麼？（例：尊嚴、親人）。</li>
+                        <li>🔲 <strong>秘密 (Secret)：</strong>他有什麼絕對不能告訴別人的事？</li>
+                        <li>🔲 <strong>反差 (Twist)：</strong>他有什麼習慣是與外表不符的？</li>
+                    </ul>
+                </section>
+
+                <section class="book-section">
+                    <h3 id="section-7">結語：造人的責任</h3>
+                    <aside class="note-box">
+                        <p>設計角色不僅僅是畫圖和寫設定，它是在創造生命。 當你賦予一個角色渴望、恐懼和缺陷時，他就獲得了自由意志。 一個成功的角色，不是玩家操控的木偶，而是玩家想要結識的朋友，甚至是想要成為的 <strong>「理想自我」</strong>。</p>
+                    </aside>
+                </section>
+
+            </article>
+
+            <hr class="section-divider">
+
+            <nav class="chapter-nav">
+                <a href="s17.html" class="nav-btn prev-chapter">
+                    <span class="label">上一章</span>
+                    <span class="title">section 17</span>
+                </a>
+                <a href="s19.html" class="nav-btn next-chapter">
+                    <span class="label">下一章</span>
+                    <span class="title">section 19</span>
+                </a>
+            </nav>
+
+        </main>
+
+        <aside class="toc-sidebar">
+            <div class="toc-sticky-container">
+                <a href="index.html" class="back-to-catalog-link">
+                    <span class="arrow">←</span> 回到目錄
+                </a>
+                <hr class="toc-divider">
+                <span class="toc-header">本章索引</span>
+                <nav class="toc-list">
+                    <a href="#section-1" class="toc-link">一、核心命題</a>
+                    <a href="#section-2" class="toc-link">二、第一層：本能層</a>
+                    <a href="#section-3" class="toc-link">二、第二層：原型層</a>
+                    <a href="#section-4" class="toc-link">四、第三層：反差層</a>
+                    <a href="#section-5" class="toc-link">五、關鍵案例分析</a>
+                    <a href="#section-6" class="toc-link">六、執行細節 Checklist</a>
+                    <a href="#section-7" class="toc-link">結語：造人的責任</a>
+                </nav>
+            </div>
+        </aside>
+
+        <footer class="catalog-footer">
+            本書由 魔魔王 (momowang7758258@gmail.com) 於2025基於行業經驗重構而成，<br>
+            內容採用 CC BY-SA 4.0 協議 發布，請確保所有轉載和衍生作品均標註作者及來源。
+        </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
