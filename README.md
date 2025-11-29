@@ -28,8 +28,9 @@
 
 本書已整合為單一文件，便於檢索與閱讀。
 
+* **[👉 點擊閱讀網頁版完整書稿 (Full Manuscript)](https://momowangouo.github.io/GameDev-BlackBook)** (推薦！)
 * **[👉 點擊閱讀完整書稿 (Full Manuscript)](https://github.com/momowangOUO/GameDev-BlackBook/blob/main/遊戲研發與發行全書%20(The%20Game%20Dev's%20Black%20Book).md)**
-* **[👉 點擊進入 Wiki 導航頁 (Chapter Navigation)](../../wiki)** (推薦！含章節跳轉與結構導覽)
+* **[👉 點擊進入 Wiki 導航頁 (Chapter Navigation)](../../wiki)** (章節跳轉與結構導覽)
 
 ---
 
