@@ -11,7 +11,7 @@
         rel="stylesheet">
 
     <style>
-        /* 1. 頂部致謝條：雙語、低調、專業 */
+        /* 1. 頂部致謝條 */
         .tech-credit-bar {
             text-align: center;
             padding: 12px 0;
@@ -39,40 +39,18 @@
             height: 20px;
         }
 
-        /* Hero Header */
-        .catalog-hero {
-            /* 這裡假設您原本 style.css 有定義，如果沒有，這裡補一個簡單的居中 */
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #f4f4f4;
-            /* 淺灰底 */
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #111;
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
         /* --- 新增：寫在最前面 (Preface Section) --- */
         .preface-box {
             max-width: 750px;
-            margin: 40px auto 20px auto;
-            /* 上下留白 */
+            margin: 40px auto 20px auto; /* 上下留白 */
             padding: 25px;
             background: #ffffff;
             border: 1px solid #ddd;
-            border-left: 5px solid #24292f;
-            /* GitHub 黑，強調工程與共建 */
+            border-left: 5px solid #24292f; /* GitHub 黑，強調工程與共建 */
             border-radius: 4px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             font-family: 'Noto Serif TC', serif;
+            text-align: left; /* 確保左對齊 */
         }
 
         .preface-title {
@@ -102,7 +80,7 @@
             display: inline-block;
         }
 
-        /* 2. 兔子洞區域：強調真相 */
+        /* 2. 兔子洞區域 */
         .rabbit-hole-section {
             padding: 20px 20px 0 20px;
             text-align: center;
@@ -129,7 +107,7 @@
             color: #d9534f;
         }
 
-        /* 3. 做出選擇：終端機風格 (酷一點的文字呈現) */
+        /* 3. 終端機風格 */
         .terminal-box {
             background: #1e1e1e;
             color: #00ff00;
@@ -172,7 +150,7 @@
             100% { opacity: 0; }
         }
 
-        /* 4. 情感激勵區 (Star & Share) - 重點優化 */
+        /* 4. 情感激勵區 */
         .emotional-cta {
             background: linear-gradient(145deg, #ffffff, #f0f0f0);
             border: 2px solid #24292f;
@@ -316,91 +294,12 @@
             border-radius: 4px;
             font-size: 0.9rem;
             transition: background 0.2s;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.3); /* 防止沒有 style.css 時完全看不到 */
         }
-
+        
         .download-btn:hover {
             background: rgba(255, 255, 255, 0.2);
         }
-        
-        /* Grid 佈局修復 (如果有 style.css 這裡可能重複，但確保樣式存在) */
-        .catalog-grid {
-             max-width: 1000px;
-             margin: 0 auto;
-             padding: 20px;
-        }
-        .phase-group {
-            margin-bottom: 40px;
-        }
-        .phase-title {
-            border-bottom: 2px solid #eee;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            color: #333;
-        }
-        .chapter-card {
-            display: flex;
-            background: #fff;
-            border: 1px solid #eee;
-            margin-bottom: 10px;
-            padding: 15px;
-            text-decoration: none;
-            color: #333;
-            transition: all 0.2s;
-            border-radius: 4px;
-            align-items: center;
-        }
-        .chapter-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: translateX(5px);
-        }
-        .card-status {
-            font-family: 'Roboto Mono';
-            font-weight: bold;
-            color: #ccc;
-            font-size: 1.2rem;
-            margin-right: 15px;
-            width: 30px;
-        }
-        .card-info h4 {
-            margin: 0 0 5px 0;
-            font-size: 1rem;
-        }
-        .card-desc {
-            font-size: 0.85rem;
-            color: #666;
-        }
-        .card-icon {
-            margin-left: auto;
-            color: #ddd;
-        }
-        .badge-current {
-            background: #d9534f;
-            color: #fff;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 3px;
-            margin-bottom: 4px;
-            display: inline-block;
-        }
-        .special-card {
-            background: #333;
-            color: #fff;
-        }
-        .special-card .card-info h4, .special-card .card-desc, .special-card .card-status {
-            color: #fff;
-        }
-        
-        /* Footer */
-        .catalog-footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.8rem;
-            color: #888;
-            background: #f9f9f9;
-            border-top: 1px solid #eee;
-        }
-
     </style>
 </head>
 
