@@ -39,6 +39,69 @@
             height: 20px;
         }
 
+        /* Hero Header */
+        .catalog-hero {
+            /* 這裡假設您原本 style.css 有定義，如果沒有，這裡補一個簡單的居中 */
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            /* 淺灰底 */
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #111;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* --- 新增：寫在最前面 (Preface Section) --- */
+        .preface-box {
+            max-width: 750px;
+            margin: 40px auto 20px auto;
+            /* 上下留白 */
+            padding: 25px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-left: 5px solid #24292f;
+            /* GitHub 黑，強調工程與共建 */
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .preface-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #24292f;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .preface-item {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .preface-item strong {
+            color: #000;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+        
+        .preface-icon {
+            margin-right: 6px;
+            display: inline-block;
+        }
+
         /* 2. 兔子洞區域：強調真相 */
         .rabbit-hole-section {
             padding: 20px 20px 0 20px;
@@ -104,17 +167,9 @@
         }
 
         @keyframes blink {
-            0% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0;
-            }
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
         }
 
         /* 4. 情感激勵區 (Star & Share) - 重點優化 */
@@ -131,7 +186,6 @@
             overflow: hidden;
         }
 
-        /* 金色光暈效果，強調價值 */
         .emotional-cta::before {
             content: "";
             position: absolute;
@@ -176,7 +230,6 @@
         .star-btn-big {
             background: #24292f;
             color: #ffd700;
-            /* 金色星星 */
             padding: 12px 30px;
             border-radius: 50px;
             font-weight: bold;
@@ -193,9 +246,9 @@
             box-shadow: 0 6px 15px rgba(36, 41, 47, 0.4);
             color: #fff;
         }
-        /* Buy Me a Coffee 按鈕樣式 */
+
         .bmc-btn {
-            background: #FFDD00; /* BMC 官方黃色 */
+            background: #FFDD00;
             color: #000000;
             padding: 12px 30px;
             border-radius: 50px;
@@ -206,12 +259,13 @@
             gap: 10px;
             transition: transform 0.2s, box-shadow 0.2s;
             box-shadow: 0 4px 10px rgba(255, 221, 0, 0.3);
-            font-family: 'Roboto Mono', monospace; /* 保持字體一致 */
+            font-family: 'Roboto Mono', monospace;
         }
+
         .bmc-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(255, 221, 0, 0.4);
-            background: #ffea5c; /* hover 時稍微變亮 */
+            background: #ffea5c;
         }
 
         .share-box {
@@ -262,11 +316,91 @@
             border-radius: 4px;
             font-size: 0.9rem;
             transition: background 0.2s;
+            background: rgba(0,0,0,0.3);
         }
 
         .download-btn:hover {
             background: rgba(255, 255, 255, 0.2);
         }
+        
+        /* Grid 佈局修復 (如果有 style.css 這裡可能重複，但確保樣式存在) */
+        .catalog-grid {
+             max-width: 1000px;
+             margin: 0 auto;
+             padding: 20px;
+        }
+        .phase-group {
+            margin-bottom: 40px;
+        }
+        .phase-title {
+            border-bottom: 2px solid #eee;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            color: #333;
+        }
+        .chapter-card {
+            display: flex;
+            background: #fff;
+            border: 1px solid #eee;
+            margin-bottom: 10px;
+            padding: 15px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s;
+            border-radius: 4px;
+            align-items: center;
+        }
+        .chapter-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+        .card-status {
+            font-family: 'Roboto Mono';
+            font-weight: bold;
+            color: #ccc;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            width: 30px;
+        }
+        .card-info h4 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+        }
+        .card-desc {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        .card-icon {
+            margin-left: auto;
+            color: #ddd;
+        }
+        .badge-current {
+            background: #d9534f;
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+        .special-card {
+            background: #333;
+            color: #fff;
+        }
+        .special-card .card-info h4, .special-card .card-desc, .special-card .card-status {
+            color: #fff;
+        }
+        
+        /* Footer */
+        .catalog-footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            color: #888;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+
     </style>
 </head>
 
@@ -302,6 +436,34 @@
 
     <main class="book-container catalog-container">
 
+        <section class="preface-box">
+            <div class="preface-title">【寫在最前面】閱讀前聲明 ⚠️</div>
+            
+            <div class="preface-item">
+                <span class="preface-icon">🎣</span><strong>1. 自首：標題黨與販賣焦慮</strong><br>
+                開頭寫得聳動純粹為了對抗演算法、求擴散。如果讓您感到不適，先說聲抱歉，請關注內容本身。
+            </div>
+
+            <div class="preface-item">
+                <span class="preface-icon">🛠️</span><strong>2. 共建：歡迎 PR 校準</strong><br>
+                若發現嚴重錯誤或認為不合適之處，與其單純批評，更歡迎透過 PR (Pull Request) 直接協助校準。我會定期維護，並由衷感謝每一位願意實際動手優化內容的貢獻者。
+            </div>
+
+            <div class="preface-item">
+                <span class="preface-icon">🧘</span><strong>3. 心態：別對商業邏輯應激</strong><br>
+                獨立遊戲與商業遊戲雖脈絡不同，但「商業邏輯」客觀存在且具參考價值。建議放下成見，理性看待其中的設計思維。
+            </div>
+
+            <div class="preface-item">
+                <span class="preface-icon">💌</span><strong>4. 初衷：寫給入行前的自己</strong><br>
+                這是一份我希望當初能看到的「新人避坑指南」。目的很單純：幫你快速搞懂基礎概論，少走冤枉路。
+            </div>
+
+            <div class="preface-item">
+                <span class="preface-icon">🏭</span><strong>5. 視角：大廠的工業化路數</strong><br>
+                內容多源於大廠的工業化流程。這只是遊戲開發的「其中一種解法」（偏商業邏輯），非標準答案，請取其精華。
+            </div>
+        </section>
         <section class="rabbit-hole-section">
             <h2 style="font-size: 1.8rem; margin-bottom: 10px;">🕳️ 兔子洞裡有什麼？</h2>
             <p style="color: #666; font-style: italic;">本書不談情懷，只談控制。</p>
@@ -329,18 +491,20 @@
             </div>
         </div>
 
-<section class="emotional-cta">
+        <section class="emotional-cta">
             <div class="cta-title">🔥 讓這把火燒得更旺一些</div>
 
             <div class="cta-desc">
                 <p>這是一個沒有廣告預算的開源項目，我們唯一的推廣渠道就是<b>「你」</b>。</p>
                 <p>如果這本書裡的某個觀點，幫你省下了數月的彎路，或者點醒了迷茫的你，<br>
-                    請考慮給予我們一點 <span class="cta-highlight">免費的鼓勵</span> 或 <span class="cta-highlight" style="background: rgba(255, 221, 0, 0.2); color: #b38b00;">實質的支持</span>：</p>
+                    請考慮給予我們一點 <span class="cta-highlight">免費的鼓勵</span> 或 <span class="cta-highlight"
+                        style="background: rgba(255, 221, 0, 0.2); color: #b38b00;">實質的支持</span>：</p>
             </div>
 
             <div class="action-group">
                 <a href="https://buymeacoffee.com/momowang?l=en" target="_blank" class="bmc-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
                         <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
                         <line x1="6" y1="1" x2="6" y2="4"></line>
@@ -351,8 +515,7 @@
                 </a>
 
                 <a href="https://github.com/momowangOUO/GameDev-BlackBook" target="_blank" class="star-btn-big">
-                    <svg height="20" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true"
-                        fill="currentColor">
+                    <svg height="20" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true" fill="currentColor">
                         <path
                             d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z">
                         </path>
